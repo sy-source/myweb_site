@@ -1,0 +1,12 @@
+---
+title: "homework10"
+jupyter: python3
+---
+
+## 안녕하세요
+
+```{python}
+1+1
+
+```
+
