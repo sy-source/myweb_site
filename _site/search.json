@@ -23,9 +23,9 @@
   {
     "objectID": "hw1.html",
     "href": "hw1.html",
-    "title": "testwebsite1",
+    "title": "hw1",
     "section": "",
-    "text": "안녕하세요, 데이터 분석 OOO 입니다."
+    "text": "import pandas as pd\n\ndata = {\n    \"제품\": [\"사과\", \"딸기\", \"수박\"],\n    \"가격\": [1800, 1500, 3000],\n    \"판매량\": [24, 38, 13]\n}\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n\n\n\n제품\n가격\n판매량\n\n\n\n\n0\n사과\n1800\n24\n\n\n1\n딸기\n1500\n38\n\n\n2\n수박\n3000\n13"
   },
   {
     "objectID": "hw1.html#홈페이지-첫-화면-입니다",
@@ -33,5 +33,40 @@
     "title": "testwebsite1",
     "section": "",
     "text": "안녕하세요, 데이터 분석 OOO 입니다."
+  },
+  {
+    "objectID": "hw1.html#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.",
+    "href": "hw1.html#다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.",
+    "title": "hw1",
+    "section": "",
+    "text": "import pandas as pd\n\ndata = {\n    \"제품\": [\"사과\", \"딸기\", \"수박\"],\n    \"가격\": [1800, 1500, 3000],\n    \"판매량\": [24, 38, 13]\n}\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n\n\n\n제품\n가격\n판매량\n\n\n\n\n0\n사과\n1800\n24\n\n\n1\n딸기\n1500\n38\n\n\n2\n수박\n3000\n13"
+  },
+  {
+    "objectID": "hw1.html#q1.-다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.",
+    "href": "hw1.html#q1.-다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.",
+    "title": "hw1",
+    "section": "",
+    "text": "import pandas as pd\n\ndata = {\n    \"제품\": [\"사과\", \"딸기\", \"수박\"],\n    \"가격\": [1800, 1500, 3000],\n    \"판매량\": [24, 38, 13]\n}\n\ndf = pd.DataFrame(data)\ndf\n\n\n\n\n\n\n\n\n제품\n가격\n판매량\n\n\n\n\n0\n사과\n1800\n24\n\n\n1\n딸기\n1500\n38\n\n\n2\n수박\n3000\n13"
+  },
+  {
+    "objectID": "hw1.html#q2.-앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해보세요.",
+    "href": "hw1.html#q2.-앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해보세요.",
+    "title": "hw1",
+    "section": "Q2. 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해보세요.",
+    "text": "Q2. 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해보세요.\n\n가격평균 = df[\"가격\"].mean()\n\n판매량평균 = df[\"판매량\"].mean()\n\ndf[[\"가격\", \"판매량\"]].mean()\n\n가격     2100.0\n판매량      25.0\ndtype: float64"
+  },
+  {
+    "objectID": "hw1.html#q3.-mpg-데이터를-불러와-복사본을-만드세요.",
+    "href": "hw1.html#q3.-mpg-데이터를-불러와-복사본을-만드세요.",
+    "title": "hw1",
+    "section": "Q3. mpg 데이터를 불러와 복사본을 만드세요.",
+    "text": "Q3. mpg 데이터를 불러와 복사본을 만드세요.\n\nimport pydataset\n\ndf_mpg=pydataset.data('mpg')\ndf_mpg_new=df_mpg.copy()\n\nprint(df_mpg_new)\n\n    manufacturer   model  displ  year  cyl       trans drv  cty  hwy fl  \\\n1           audi      a4    1.8  1999    4    auto(l5)   f   18   29  p   \n2           audi      a4    1.8  1999    4  manual(m5)   f   21   29  p   \n3           audi      a4    2.0  2008    4  manual(m6)   f   20   31  p   \n4           audi      a4    2.0  2008    4    auto(av)   f   21   30  p   \n5           audi      a4    2.8  1999    6    auto(l5)   f   16   26  p   \n..           ...     ...    ...   ...  ...         ...  ..  ...  ... ..   \n230   volkswagen  passat    2.0  2008    4    auto(s6)   f   19   28  p   \n231   volkswagen  passat    2.0  2008    4  manual(m6)   f   21   29  p   \n232   volkswagen  passat    2.8  1999    6    auto(l5)   f   16   26  p   \n233   volkswagen  passat    2.8  1999    6  manual(m5)   f   18   26  p   \n234   volkswagen  passat    3.6  2008    6    auto(s6)   f   17   26  p   \n\n       class  \n1    compact  \n2    compact  \n3    compact  \n4    compact  \n5    compact  \n..       ...  \n230  midsize  \n231  midsize  \n232  midsize  \n233  midsize  \n234  midsize  \n\n[234 rows x 11 columns]"
+  },
+  {
+    "objectID": "hw1.html#q4.-복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요.",
+    "href": "hw1.html#q4.-복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요.",
+    "title": "hw1",
+    "section": "Q4. 복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.",
+    "text": "Q4. 복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.\n\ndf_mpg_new = df_mpg_new.rename(columns = {'cty' : 'city'})\nprint(df_mpg_new['city'])\n\ndf_mpg_new = df_mpg_new.rename(columns = {'hwy' : 'highway'})\nprint(df_mpg_new['highway'])\n\n1      18\n2      21\n3      20\n4      21\n5      16\n       ..\n230    19\n231    21\n232    16\n233    18\n234    17\nName: city, Length: 234, dtype: int64\n1      29\n2      29\n3      31\n4      30\n5      26\n       ..\n230    28\n231    29\n232    26\n233    26\n234    26\nName: highway, Length: 234, dtype: int64"
   }
 ]

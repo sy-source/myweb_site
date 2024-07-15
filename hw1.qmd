@@ -1,16 +1,54 @@
 ---
-title: "testwebsite1"
+title: "hw1"
 jupyter: python3
 ---
 
-## 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.
+## Q1. 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.
 
-안녕하세요, 데이터 분석 OOO 입니다.
+```{python}
+import pandas as pd
+
+data = {
+    "제품": ["사과", "딸기", "수박"],
+    "가격": [1800, 1500, 3000],
+    "판매량": [24, 38, 13]
+}
+
+df = pd.DataFrame(data)
+df
+```
+
+## Q2. 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해보세요.
 
 ```{python}
 
-df=pd.DataFrame({
-    "col1":[1, 2,3]
-})
+가격평균 = df["가격"].mean()
+
+판매량평균 = df["판매량"].mean()
+
+df[["가격", "판매량"]].mean()
+
+```
+
+
+## Q3. mpg 데이터를 불러와 복사본을 만드세요.
+
+```{python}
+
+mpg = pd.read_csv("C:/Users/USER/Downloads/mpg.csv")
+mpg2 = mpg.copy()
+
+```
+
+## Q4. 복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.
+
+```{python}
+
+df_mpg_new = df_mpg_new.rename(columns = {'cty' : 'city'})
+print(df_mpg_new['city'])
+
+df_mpg_new = df_mpg_new.rename(columns = {'hwy' : 'highway'})
+print(df_mpg_new['highway'])
+
 ```
 
