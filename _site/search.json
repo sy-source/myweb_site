@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "testwebsite1",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n2"
+    "text": "안녕하세요, 데이터 분석 OOO 입니다."
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,26 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n2"
+  },
+  {
+    "objectID": "index.html#홈페이지-첫-화면-입니다",
+    "href": "index.html#홈페이지-첫-화면-입니다",
+    "title": "testwebsite1",
+    "section": "",
+    "text": "안녕하세요, 데이터 분석 OOO 입니다."
+  },
+  {
+    "objectID": "hw1.html",
+    "href": "hw1.html",
+    "title": "testwebsite1",
+    "section": "",
+    "text": "안녕하세요, 데이터 분석 OOO 입니다."
+  },
+  {
+    "objectID": "hw1.html#홈페이지-첫-화면-입니다",
+    "href": "hw1.html#홈페이지-첫-화면-입니다",
+    "title": "testwebsite1",
+    "section": "",
+    "text": "안녕하세요, 데이터 분석 OOO 입니다."
   }
 ]
