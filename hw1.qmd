@@ -110,4 +110,3 @@ midwest['size'] = np.where(midwest['ratio'] > ratio_mean, 'large', 'small')
 midwest
 
 ```
-
