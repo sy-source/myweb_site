@@ -117,7 +117,7 @@ mpg_a["hwy"].mean()
 print(mpg_a)
 
 mpg_b["hwy"].mean()
-print(mpg_)
+print(mpg)
 
 ```
 
