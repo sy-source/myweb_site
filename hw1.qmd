@@ -34,18 +34,12 @@ df[["가격", "판매량"]].mean()
 
 ```{python}
 
-mpg = pd.read_csv("C:/Users/USER/Downloads/mpg.csv")
-mpg2 = mpg.copy()
-
 ```
 
 ## Q4. 복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.
 
 ```{python}
 
-mpg2 = mpg2.rename(columns = {'cty' : 'city'})
-
-mpg2 = mpg2.rename(columns = {'hwy' : 'highway'})
 
 ```
 
@@ -53,7 +47,6 @@ mpg2 = mpg2.rename(columns = {'hwy' : 'highway'})
 
 ```{python}
 
-mpg2.head()
 
 ```
 
@@ -110,3 +103,21 @@ midwest['size'] = np.where(midwest['ratio'] > ratio_mean, 'large', 'small')
 midwest
 
 ```
+
+
+## Q1. 자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.
+
+```{python}
+
+mpg = pd.read_csv("C:/Users/USER/Downloads/mpg.csv")
+mpg_a = mpg.query("displ <=4")
+mpg_b = mpg.query("displ >=5")
+
+mpg_a["hwy"].mean()
+print(mpg_a)
+
+mpg_b["hwy"].mean()
+print(mpg_)
+
+```
+

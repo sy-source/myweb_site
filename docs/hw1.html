@@ -165,6 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#q7.-poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정하세요." id="toc-q7.-poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정하세요." class="nav-link" data-scroll-target="#q7.-poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정하세요.">Q7. poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정하세요.</a></li>
   <li><a href="#q8.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생-변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요." id="toc-q8.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생-변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요." class="nav-link" data-scroll-target="#q8.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생-변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요.">Q8. total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생 변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.</a></li>
   <li><a href="#q9.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요." id="toc-q9.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요." class="nav-link" data-scroll-target="#q9.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.">Q9. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.</a></li>
+  <li><a href="#q1.-자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요." id="toc-q1.-자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요." class="nav-link" data-scroll-target="#q1.-자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.">Q1. 자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.</a></li>
   </ul>
 </nav>
     </div>
@@ -192,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="q1.-다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요." class="level2">
 <h2 class="anchored" data-anchor-id="q1.-다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.">Q1. 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.</h2>
-<div id="ba850db2" class="cell" data-execution_count="1">
+<div id="a24ac6b6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
@@ -203,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -244,13 +245,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="q2.-앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해보세요." class="level2">
 <h2 class="anchored" data-anchor-id="q2.-앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해보세요.">Q2. 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해보세요.</h2>
-<div id="9b80ada4" class="cell" data-execution_count="2">
+<div id="8610cb29" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>가격평균 <span class="op">=</span> df[<span class="st">"가격"</span>].mean()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>판매량평균 <span class="op">=</span> df[<span class="st">"판매량"</span>].mean()</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"가격"</span>, <span class="st">"판매량"</span>]].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>가격     2100.0
 판매량      25.0
 dtype: float64</code></pre>
@@ -259,14 +260,14 @@ dtype: float64</code></pre>
 </section>
 <section id="q3.-mpg-데이터를-불러와-복사본을-만드세요." class="level2">
 <h2 class="anchored" data-anchor-id="q3.-mpg-데이터를-불러와-복사본을-만드세요.">Q3. mpg 데이터를 불러와 복사본을 만드세요.</h2>
-<div id="e5b7b6ea" class="cell" data-execution_count="3">
+<div id="d307ab2d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Downloads/mpg.csv"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mpg2 <span class="op">=</span> mpg.copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="q4.-복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요." class="level2">
 <h2 class="anchored" data-anchor-id="q4.-복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요.">Q4. 복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.</h2>
-<div id="6d66094d" class="cell" data-execution_count="4">
+<div id="4a9133bb" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mpg2 <span class="op">=</span> mpg2.rename(columns <span class="op">=</span> {<span class="st">'cty'</span> : <span class="st">'city'</span>})</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>mpg2 <span class="op">=</span> mpg2.rename(columns <span class="op">=</span> {<span class="st">'hwy'</span> : <span class="st">'highway'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -274,9 +275,9 @@ dtype: float64</code></pre>
 </section>
 <section id="q5.-데이터-일부를-출력해-변수명이-바뀌었는지-확인해보세요." class="level2">
 <h2 class="anchored" data-anchor-id="q5.-데이터-일부를-출력해-변수명이-바뀌었는지-확인해보세요.">Q5. 데이터 일부를 출력해 변수명이 바뀌었는지 확인해보세요.</h2>
-<div id="6d70ac6c" class="cell" data-execution_count="5">
+<div id="5598ec6a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>mpg2.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
 
@@ -377,7 +378,7 @@ dtype: float64</code></pre>
 </section>
 <section id="q6.-midwest.csv를-불러와-데이터의-특징을-파악하세요." class="level2">
 <h2 class="anchored" data-anchor-id="q6.-midwest.csv를-불러와-데이터의-특징을-파악하세요.">Q6. midwest.csv를 불러와 데이터의 특징을 파악하세요.</h2>
-<div id="672df626" class="cell" data-execution_count="6">
+<div id="04ed7977" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Downloads/midwest.csv"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>midwest.head()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>midwest.tail()</span>
@@ -421,7 +422,7 @@ Data columns (total 28 columns):
 dtypes: float64(15), int64(10), object(3)
 memory usage: 95.7+ KB</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
 
@@ -655,13 +656,13 @@ memory usage: 95.7+ KB</code></pre>
 </section>
 <section id="q7.-poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정하세요." class="level2">
 <h2 class="anchored" data-anchor-id="q7.-poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정하세요.">Q7. poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정하세요.</h2>
-<div id="f25459a9" class="cell" data-execution_count="7">
+<div id="8933af04" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="op">=</span> midwest.rename(columns <span class="op">=</span> {<span class="st">'poptotal'</span> : <span class="st">'total'</span>, <span class="st">'popasian'</span> : <span class="st">'asian'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="q8.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생-변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요." class="level2">
 <h2 class="anchored" data-anchor-id="q8.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생-변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요.">Q8. total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생 변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.</h2>
-<div id="19cd2092" class="cell" data-execution_count="8">
+<div id="6435ac57" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#백분율 변수</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>midwest[<span class="st">'ratio'</span>] <span class="op">=</span> midwest[<span class="st">'asian'</span>] <span class="op">/</span> midwest[<span class="st">'total'</span>] <span class="op">*</span> <span class="dv">100</span></span>
@@ -682,18 +683,18 @@ memory usage: 95.7+ KB</code></pre>
 </section>
 <section id="q9.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요." class="level2">
 <h2 class="anchored" data-anchor-id="q9.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.">Q9. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.</h2>
-<div id="cd25f975" class="cell" data-execution_count="9">
+<div id="261d34bb" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ratio_mean <span class="op">=</span> midwest[<span class="st">'ratio'</span>].mean()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ratio_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>np.float64(0.4872461834357345)</code></pre>
 </div>
 </div>
-<div id="3954427f" class="cell" data-execution_count="10">
+<div id="d1b19943" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>midwest[<span class="st">'size'</span>] <span class="op">=</span> np.where(midwest[<span class="st">'ratio'</span>] <span class="op">&gt;</span> ratio_mean, <span class="st">'large'</span>, <span class="st">'small'</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>midwest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 
 
@@ -994,6 +995,128 @@ memory usage: 95.7+ KB</code></pre>
 
 <p>437 rows × 30 columns</p>
 </div>
+</div>
+</div>
+</section>
+<section id="q1.-자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요." class="level2">
+<h2 class="anchored" data-anchor-id="q1.-자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.">Q1. 자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.</h2>
+<div id="8f32e66e" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Downloads/mpg.csv"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>mpg_a <span class="op">=</span> mpg.query(<span class="st">"displ &lt;=4"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>mpg_b <span class="op">=</span> mpg.query(<span class="st">"displ &gt;=5"</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>mpg_a[<span class="st">"hwy"</span>].mean()</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mpg_a)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>mpg_b[<span class="st">"hwy"</span>].mean()</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mpg_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    manufacturer   model  displ  year  cyl       trans drv  cty  hwy fl  \
+0           audi      a4    1.8  1999    4    auto(l5)   f   18   29  p   
+1           audi      a4    1.8  1999    4  manual(m5)   f   21   29  p   
+2           audi      a4    2.0  2008    4  manual(m6)   f   20   31  p   
+3           audi      a4    2.0  2008    4    auto(av)   f   21   30  p   
+4           audi      a4    2.8  1999    6    auto(l5)   f   16   26  p   
+..           ...     ...    ...   ...  ...         ...  ..  ...  ... ..   
+229   volkswagen  passat    2.0  2008    4    auto(s6)   f   19   28  p   
+230   volkswagen  passat    2.0  2008    4  manual(m6)   f   21   29  p   
+231   volkswagen  passat    2.8  1999    6    auto(l5)   f   16   26  p   
+232   volkswagen  passat    2.8  1999    6  manual(m5)   f   18   26  p   
+233   volkswagen  passat    3.6  2008    6    auto(s6)   f   17   26  p   
+
+       class  
+0    compact  
+1    compact  
+2    compact  
+3    compact  
+4    compact  
+..       ...  
+229  midsize  
+230  midsize  
+231  midsize  
+232  midsize  
+233  midsize  
+
+[163 rows x 11 columns]
+    manufacturer                   model  displ  year  cyl       trans drv  \
+18     chevrolet      c1500 suburban 2wd    5.3  2008    8    auto(l4)   r   
+19     chevrolet      c1500 suburban 2wd    5.3  2008    8    auto(l4)   r   
+20     chevrolet      c1500 suburban 2wd    5.3  2008    8    auto(l4)   r   
+21     chevrolet      c1500 suburban 2wd    5.7  1999    8    auto(l4)   r   
+22     chevrolet      c1500 suburban 2wd    6.0  2008    8    auto(l4)   r   
+23     chevrolet                corvette    5.7  1999    8  manual(m6)   r   
+24     chevrolet                corvette    5.7  1999    8    auto(l4)   r   
+25     chevrolet                corvette    6.2  2008    8  manual(m6)   r   
+26     chevrolet                corvette    6.2  2008    8    auto(s6)   r   
+27     chevrolet                corvette    7.0  2008    8  manual(m6)   r   
+28     chevrolet         k1500 tahoe 4wd    5.3  2008    8    auto(l4)   4   
+29     chevrolet         k1500 tahoe 4wd    5.3  2008    8    auto(l4)   4   
+30     chevrolet         k1500 tahoe 4wd    5.7  1999    8    auto(l4)   4   
+31     chevrolet         k1500 tahoe 4wd    6.5  1999    8    auto(l4)   4   
+55         dodge       dakota pickup 4wd    5.2  1999    8  manual(m5)   4   
+56         dodge       dakota pickup 4wd    5.2  1999    8    auto(l4)   4   
+61         dodge             durango 4wd    5.2  1999    8    auto(l4)   4   
+62         dodge             durango 4wd    5.7  2008    8    auto(l5)   4   
+63         dodge             durango 4wd    5.9  1999    8    auto(l4)   4   
+70         dodge     ram 1500 pickup 4wd    5.2  1999    8    auto(l4)   4   
+71         dodge     ram 1500 pickup 4wd    5.2  1999    8  manual(m5)   4   
+72         dodge     ram 1500 pickup 4wd    5.7  2008    8    auto(l5)   4   
+73         dodge     ram 1500 pickup 4wd    5.9  1999    8    auto(l4)   4   
+75          ford          expedition 2wd    5.4  1999    8    auto(l4)   r   
+76          ford          expedition 2wd    5.4  2008    8    auto(l6)   r   
+82          ford            explorer 4wd    5.0  1999    8    auto(l4)   4   
+88          ford         f150 pickup 4wd    5.4  1999    8    auto(l4)   4   
+89          ford         f150 pickup 4wd    5.4  2008    8    auto(l4)   4   
+98          ford                 mustang    5.4  2008    8  manual(m6)   r   
+128         jeep      grand cherokee 4wd    5.7  2008    8    auto(l5)   4   
+129         jeep      grand cherokee 4wd    6.1  2008    8    auto(l5)   4   
+134      lincoln           navigator 2wd    5.4  1999    8    auto(l4)   r   
+135      lincoln           navigator 2wd    5.4  1999    8    auto(l4)   r   
+136      lincoln           navigator 2wd    5.4  2008    8    auto(l6)   r   
+140      mercury         mountaineer 4wd    5.0  1999    8    auto(l4)   4   
+153       nissan          pathfinder 4wd    5.6  2008    8    auto(s5)   4   
+158      pontiac              grand prix    5.3  2008    8    auto(s4)   f   
+199       toyota  land cruiser wagon 4wd    5.7  2008    8    auto(s6)   4   
+
+     cty  hwy fl       class  
+18    14   20  r         suv  
+19    11   15  e         suv  
+20    14   20  r         suv  
+21    13   17  r         suv  
+22    12   17  r         suv  
+23    16   26  p     2seater  
+24    15   23  p     2seater  
+25    16   26  p     2seater  
+26    15   25  p     2seater  
+27    15   24  p     2seater  
+28    14   19  r         suv  
+29    11   14  e         suv  
+30    11   15  r         suv  
+31    14   17  d         suv  
+55    11   17  r      pickup  
+56    11   15  r      pickup  
+61    11   16  r         suv  
+62    13   18  r         suv  
+63    11   15  r         suv  
+70    11   15  r      pickup  
+71    11   16  r      pickup  
+72    13   17  r      pickup  
+73    11   15  r      pickup  
+75    11   17  r         suv  
+76    12   18  r         suv  
+82    13   17  r         suv  
+88    11   15  r      pickup  
+89    13   17  r      pickup  
+98    14   20  p  subcompact  
+128   13   18  r         suv  
+129   11   14  p         suv  
+134   11   17  r         suv  
+135   11   16  p         suv  
+136   12   18  r         suv  
+140   13   17  r         suv  
+153   12   18  p         suv  
+158   16   25  p     midsize  
+199   13   18  r         suv  </code></pre>
 </div>
 </div>
 
