@@ -1,17 +1,16 @@
 ---
-title: "hw1"
-jupyter: python3
+title: "슬기로운 웅이생활"
+toc: false
+about:
+  id: hero-heading
+  template: jolla
+  image: bori.jpg
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
 ---
-
-## 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.
-
-```{python}
-import pandas as pd
-
-df = pd.DataFrame({
-    "col1": [1, 2, 3]
-})
-df
-```
-
-
+#### LS빅데이터스쿨 윤대웅 입니다.

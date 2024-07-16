@@ -1,0 +1,9 @@
+---
+title: "homeworkk"
+editor: visual
+jupyter: python3
+---
+```{python}
+1+1
+```
+
