@@ -1,0 +1,125 @@
+---
+title: "hw1"
+author: "윤대웅"
+editor: visual
+jupyter: python3
+---
+
+## Q1. 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.
+
+```{python}
+import pandas as pd
+
+data = {
+    "제품": ["사과", "딸기", "수박"],
+    "가격": [1800, 1500, 3000],
+    "판매량": [24, 38, 13]
+}
+
+df = pd.DataFrame(data)
+df
+```
+
+## Q2. 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해보세요.
+
+```{python}
+
+가격평균 = df["가격"].mean()
+
+판매량평균 = df["판매량"].mean()
+
+df[["가격", "판매량"]].mean()
+
+```
+
+## Q3. mpg 데이터를 불러와 복사본을 만드세요.
+
+```{python}
+
+```
+
+## Q4. 복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.
+
+```{python}
+
+
+```
+
+## Q5. 데이터 일부를 출력해 변수명이 바뀌었는지 확인해보세요.
+
+```{python}
+
+
+```
+
+## Q6. midwest.csv를 불러와 데이터의 특징을 파악하세요.
+
+```{python}
+
+midwest = pd.read_csv("C:/Users/USER/Downloads/midwest.csv")
+midwest.head()
+midwest.tail()
+midwest.shape
+midwest.info()
+midwest.describe()
+
+```
+
+## Q7. poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정하세요.
+
+```{python}
+
+midwest = midwest.rename(columns = {'poptotal' : 'total', 'popasian' : 'asian'})
+
+```
+
+## Q8. total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생 변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.
+
+```{python}
+
+#백분율 변수
+
+midwest['ratio'] = midwest['asian'] / midwest['total'] * 100
+
+midwest
+
+#히스토그램
+
+midwest['ratio'].plot.hist()
+
+```
+
+## Q9. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 'large', 그 외에는 'small'을 부여한 파생변수를 만들어 보세요.
+
+```{python}
+
+ratio_mean = midwest['ratio'].mean()
+ratio_mean
+
+```
+
+```{python}
+
+import numpy as np
+midwest['size'] = np.where(midwest['ratio'] > ratio_mean, 'large', 'small')
+midwest
+
+```
+
+
+## Q1. 자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.
+
+```{python}
+
+mpg = pd.read_csv("C:/Users/USER/Downloads/mpg.csv")
+mpg_a = mpg.query("displ <=4")
+mpg_b = mpg.query("displ >=5")
+
+mpg_a["hwy"].mean()
+print(mpg_a)
+
+mpg_b["hwy"].mean()
+print(mpg)
+
+```
+
