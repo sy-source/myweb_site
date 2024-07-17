@@ -1,5 +1,8 @@
 ---
 title: "hw1"
+author: "윤대웅"
+date: "2024-07-12"
+categories: [bigdata]
 jupyter: python3
 ---
 
