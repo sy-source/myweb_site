@@ -1,0 +1,90 @@
+---
+title: "gra1"
+author: "윤대웅"
+editor: visual
+jupyter: python3
+---
+
+## 데이터 및 패키지 로드
+
+```{python}
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import plotly.express as px
+
+mpg = pd.read_csv("C:/Users/USER/Downloads/mpg.csv")
+mpg.shape
+
+```
+
+## 산점도 만들기
+
+```{python}
+
+sns.scatterplot(data=mpg, x="displ", y="hwy") \
+    .set(xlim = [3,6], ylim=[10, 30])
+plt.show()
+
+sns.scatterplot(data=mpg, x="displ", y="hwy", hue = 'drv') \
+ .set(xlim = [3,6], ylim=[10, 30])
+plt.show()
+
+```
+
+### 막대그래프 (plotbar)
+
+```{python}
+
+df_mpg = mpg.groupby("drv", as_index = False).agg(mean_hwy = ("hwy", "mean"))
+
+sns.barplot(data = df_mpg.sort_values("mean_hwy"), 
+            x = "drv", y = "mean_hwy", hue = "drv")
+plt.show()
+```
+
+### 막대그래프 (크기순으로 정렬)
+
+```{python}
+
+plt.clf()
+sns.barplot(data=df_mpg.sort_values("mean_hwy", ascending = False), 
+            x = "drv", y = "mean_hwy", hue = "drv")
+plt.show()
+
+```
+
+### 막대그래프 (barplot)
+
+```{python}
+
+import plotly.express as px
+
+df_mpg = mpg.groupby("drv", as_index = False) \
+    .agg(mean_hwy = ("hwy", "mean"))
+plt.clf()
+sns.barplot(data = df_mpg.sort_values("mean_hwy"),  #정렬 추가
+            x = "drv", y = "mean_hwy", hue = "drv")
+plt.show()
+
+```
+
+### 막대그래프 (countplot)
+
+```{python}
+
+plt.clf()
+sns.countplot(data=mpg, x= "drv")
+plt.show()
+
+```
+
+### plotly 산점도
+
+```{python}
+
+import plotly.express as px
+px.scatter(data_frame = mpg, x = 'cty', y = 'hwy', color = 'drv')
+
+```

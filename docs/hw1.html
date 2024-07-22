@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="윤대웅">
 
 <title>myweb_site1 - hw1</title>
 <style>
@@ -102,7 +103,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
+
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
 
 
 <link rel="stylesheet" href="styles.css">
@@ -126,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="./index.qmd"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -134,12 +138,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./hw1.html" aria-current="page"> 
-<span class="menu-text">hw1</span></a>
+    <a class="nav-link" href="./blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./hw2.html"> 
-<span class="menu-text">hw2</span></a>
+    <a class="nav-link" href="./gra1.qmd"> 
+<span class="menu-text">graph</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -182,6 +186,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>윤대웅 </p>
+          </div>
+  </div>
     
   
     
@@ -194,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="q1.-다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요." class="level2">
 <h2 class="anchored" data-anchor-id="q1.-다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.">Q1. 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.</h2>
-<div id="62cf58a2" class="cell" data-execution_count="1">
+<div id="54d28b31" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
@@ -205,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -246,13 +256,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="q2.-앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해보세요." class="level2">
 <h2 class="anchored" data-anchor-id="q2.-앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해보세요.">Q2. 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해보세요.</h2>
-<div id="cb3a8f9f" class="cell" data-execution_count="2">
+<div id="97d1f56b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>가격평균 <span class="op">=</span> df[<span class="st">"가격"</span>].mean()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>판매량평균 <span class="op">=</span> df[<span class="st">"판매량"</span>].mean()</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"가격"</span>, <span class="st">"판매량"</span>]].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>가격     2100.0
 판매량      25.0
 dtype: float64</code></pre>
@@ -270,7 +280,7 @@ dtype: float64</code></pre>
 </section>
 <section id="q6.-midwest.csv를-불러와-데이터의-특징을-파악하세요." class="level2">
 <h2 class="anchored" data-anchor-id="q6.-midwest.csv를-불러와-데이터의-특징을-파악하세요.">Q6. midwest.csv를 불러와 데이터의 특징을 파악하세요.</h2>
-<div id="f8113efa" class="cell" data-execution_count="3">
+<div id="e92b61bf" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Downloads/midwest.csv"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>midwest.head()</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>midwest.tail()</span>
@@ -314,7 +324,7 @@ Data columns (total 28 columns):
 dtypes: float64(15), int64(10), object(3)
 memory usage: 95.7+ KB</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -548,360 +558,28 @@ memory usage: 95.7+ KB</code></pre>
 </section>
 <section id="q7.-poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정하세요." class="level2">
 <h2 class="anchored" data-anchor-id="q7.-poptotal전체인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정하세요.">Q7. poptotal(전체인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정하세요.</h2>
-<div id="b47d1b9a" class="cell" data-execution_count="4">
+<div id="0e640cd2" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="op">=</span> midwest.rename(columns <span class="op">=</span> {<span class="st">'poptotal'</span> : <span class="st">'total'</span>, <span class="st">'popasian'</span> : <span class="st">'asian'</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="q8.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생-변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요." class="level2">
 <h2 class="anchored" data-anchor-id="q8.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생-변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요.">Q8. total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생 변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.</h2>
-<div id="e157b1b6" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#백분율 변수</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>midwest[<span class="st">'ratio'</span>] <span class="op">=</span> midwest[<span class="st">'asian'</span>] <span class="op">/</span> midwest[<span class="st">'total'</span>] <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>midwest</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#히스토그램</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>midwest[<span class="st">'ratio'</span>].plot.hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="hw1_files/figure-html/cell-6-output-1.png" width="593" height="411" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
 <section id="q9.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요." class="level2">
 <h2 class="anchored" data-anchor-id="q9.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.">Q9. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.</h2>
-<div id="efe2003c" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ratio_mean <span class="op">=</span> midwest[<span class="st">'ratio'</span>].mean()</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ratio_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>np.float64(0.4872461834357345)</code></pre>
-</div>
-</div>
-<div id="89f10c55" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>midwest[<span class="st">'size'</span>] <span class="op">=</span> np.where(midwest[<span class="st">'ratio'</span>] <span class="op">&gt;</span> ratio_mean, <span class="st">'large'</span>, <span class="st">'small'</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>midwest</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">PID</th>
-<th data-quarto-table-cell-role="th">county</th>
-<th data-quarto-table-cell-role="th">state</th>
-<th data-quarto-table-cell-role="th">area</th>
-<th data-quarto-table-cell-role="th">total</th>
-<th data-quarto-table-cell-role="th">popdensity</th>
-<th data-quarto-table-cell-role="th">popwhite</th>
-<th data-quarto-table-cell-role="th">popblack</th>
-<th data-quarto-table-cell-role="th">popamerindian</th>
-<th data-quarto-table-cell-role="th">asian</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">poppovertyknown</th>
-<th data-quarto-table-cell-role="th">percpovertyknown</th>
-<th data-quarto-table-cell-role="th">percbelowpoverty</th>
-<th data-quarto-table-cell-role="th">percchildbelowpovert</th>
-<th data-quarto-table-cell-role="th">percadultpoverty</th>
-<th data-quarto-table-cell-role="th">percelderlypoverty</th>
-<th data-quarto-table-cell-role="th">inmetro</th>
-<th data-quarto-table-cell-role="th">category</th>
-<th data-quarto-table-cell-role="th">ratio</th>
-<th data-quarto-table-cell-role="th">size</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>561</td>
-<td>ADAMS</td>
-<td>IL</td>
-<td>0.052</td>
-<td>66090</td>
-<td>1270.961540</td>
-<td>63917</td>
-<td>1702</td>
-<td>98</td>
-<td>249</td>
-<td>...</td>
-<td>63628</td>
-<td>96.274777</td>
-<td>13.151443</td>
-<td>18.011717</td>
-<td>11.009776</td>
-<td>12.443812</td>
-<td>0</td>
-<td>AAR</td>
-<td>0.376759</td>
-<td>small</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>562</td>
-<td>ALEXANDER</td>
-<td>IL</td>
-<td>0.014</td>
-<td>10626</td>
-<td>759.000000</td>
-<td>7054</td>
-<td>3496</td>
-<td>19</td>
-<td>48</td>
-<td>...</td>
-<td>10529</td>
-<td>99.087145</td>
-<td>32.244278</td>
-<td>45.826514</td>
-<td>27.385647</td>
-<td>25.228976</td>
-<td>0</td>
-<td>LHR</td>
-<td>0.451722</td>
-<td>small</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>563</td>
-<td>BOND</td>
-<td>IL</td>
-<td>0.022</td>
-<td>14991</td>
-<td>681.409091</td>
-<td>14477</td>
-<td>429</td>
-<td>35</td>
-<td>16</td>
-<td>...</td>
-<td>14235</td>
-<td>94.956974</td>
-<td>12.068844</td>
-<td>14.036061</td>
-<td>10.852090</td>
-<td>12.697410</td>
-<td>0</td>
-<td>AAR</td>
-<td>0.106731</td>
-<td>small</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>564</td>
-<td>BOONE</td>
-<td>IL</td>
-<td>0.017</td>
-<td>30806</td>
-<td>1812.117650</td>
-<td>29344</td>
-<td>127</td>
-<td>46</td>
-<td>150</td>
-<td>...</td>
-<td>30337</td>
-<td>98.477569</td>
-<td>7.209019</td>
-<td>11.179536</td>
-<td>5.536013</td>
-<td>6.217047</td>
-<td>1</td>
-<td>ALU</td>
-<td>0.486918</td>
-<td>small</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>565</td>
-<td>BROWN</td>
-<td>IL</td>
-<td>0.018</td>
-<td>5836</td>
-<td>324.222222</td>
-<td>5264</td>
-<td>547</td>
-<td>14</td>
-<td>5</td>
-<td>...</td>
-<td>4815</td>
-<td>82.505140</td>
-<td>13.520249</td>
-<td>13.022889</td>
-<td>11.143211</td>
-<td>19.200000</td>
-<td>0</td>
-<td>AAR</td>
-<td>0.085675</td>
-<td>small</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">432</td>
-<td>3048</td>
-<td>WAUKESHA</td>
-<td>WI</td>
-<td>0.034</td>
-<td>304715</td>
-<td>8962.205880</td>
-<td>298313</td>
-<td>1096</td>
-<td>672</td>
-<td>2699</td>
-<td>...</td>
-<td>299802</td>
-<td>98.387674</td>
-<td>3.121060</td>
-<td>3.785820</td>
-<td>2.590061</td>
-<td>4.085479</td>
-<td>1</td>
-<td>HLU</td>
-<td>0.885746</td>
-<td>large</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">433</td>
-<td>3049</td>
-<td>WAUPACA</td>
-<td>WI</td>
-<td>0.045</td>
-<td>46104</td>
-<td>1024.533330</td>
-<td>45695</td>
-<td>22</td>
-<td>125</td>
-<td>92</td>
-<td>...</td>
-<td>44412</td>
-<td>96.330036</td>
-<td>8.488697</td>
-<td>10.071411</td>
-<td>6.953799</td>
-<td>10.338641</td>
-<td>0</td>
-<td>AAR</td>
-<td>0.199549</td>
-<td>small</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">434</td>
-<td>3050</td>
-<td>WAUSHARA</td>
-<td>WI</td>
-<td>0.037</td>
-<td>19385</td>
-<td>523.918919</td>
-<td>19094</td>
-<td>29</td>
-<td>70</td>
-<td>43</td>
-<td>...</td>
-<td>19163</td>
-<td>98.854785</td>
-<td>13.786985</td>
-<td>20.050708</td>
-<td>11.695784</td>
-<td>11.804558</td>
-<td>0</td>
-<td>AAR</td>
-<td>0.221821</td>
-<td>small</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">435</td>
-<td>3051</td>
-<td>WINNEBAGO</td>
-<td>WI</td>
-<td>0.035</td>
-<td>140320</td>
-<td>4009.142860</td>
-<td>136822</td>
-<td>697</td>
-<td>685</td>
-<td>1728</td>
-<td>...</td>
-<td>133950</td>
-<td>95.460376</td>
-<td>8.804031</td>
-<td>10.592031</td>
-<td>8.660587</td>
-<td>6.661094</td>
-<td>1</td>
-<td>HAU</td>
-<td>1.231471</td>
-<td>large</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">436</td>
-<td>3052</td>
-<td>WOOD</td>
-<td>WI</td>
-<td>0.048</td>
-<td>73605</td>
-<td>1533.437500</td>
-<td>72157</td>
-<td>90</td>
-<td>481</td>
-<td>722</td>
-<td>...</td>
-<td>72685</td>
-<td>98.750085</td>
-<td>8.525831</td>
-<td>11.162997</td>
-<td>7.375656</td>
-<td>7.882918</td>
-<td>0</td>
-<td>AAR</td>
-<td>0.980912</td>
-<td>large</td>
-</tr>
-</tbody>
-</table>
-
-<p>437 rows × 30 columns</p>
-</div>
-</div>
-</div>
 </section>
 <section id="q1.-자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요." class="level2">
 <h2 class="anchored" data-anchor-id="q1.-자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.">Q1. 자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. displ(배기량)이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 hwy(고속도로 연비) 평균이 더 높은지 알아보세요.</h2>
-<div id="4aafbe97" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Downloads/mpg.csv"</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mpg_a <span class="op">=</span> mpg.query(<span class="st">"displ &lt;=4"</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>mpg_b <span class="op">=</span> mpg.query(<span class="st">"displ &gt;=5"</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>mpg_a[<span class="st">"hwy"</span>].mean()</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mpg_a)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>mpg_b[<span class="st">"hwy"</span>].mean()</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8b4cf0b7" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Downloads/mpg.csv"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mpg_a <span class="op">=</span> mpg.query(<span class="st">"displ &lt;=4"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>mpg_b <span class="op">=</span> mpg.query(<span class="st">"displ &gt;=5"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>mpg_a[<span class="st">"hwy"</span>].mean()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mpg_a)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>mpg_b[<span class="st">"hwy"</span>].mean()</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    manufacturer   model  displ  year  cyl       trans drv  cty  hwy fl  \
 0           audi      a4    1.8  1999    4    auto(l5)   f   18   29  p   
