@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="yoon">
 
-<title>myweb_site1 - 슬기로운 웅이생활</title>
+<title>myweb_site1 - hw3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,10 +21,44 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -33,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
@@ -65,12 +101,31 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-2.32.0.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+
 
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -88,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.qmd"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -98,10 +153,6 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../gra1.qmd"> 
-<span class="menu-text">graph</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -114,39 +165,269 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">슬기로운 웅이생활</h1>
+      <h1 class="title">hw3</h1>
                       </div>
   </div>
+    
+  
   <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>yoon </p>
+            </div>
     </div>
+      
+    
+      
+    </div>
+    
+  
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#데이터-및-패키지-로드" id="toc-데이터-및-패키지-로드" class="nav-link active" data-scroll-target="#데이터-및-패키지-로드">데이터 및 패키지 로드</a></li>
+  <li><a href="#산점도-만들기" id="toc-산점도-만들기" class="nav-link" data-scroll-target="#산점도-만들기">산점도 만들기</a>
+  <ul class="collapse">
+  <li><a href="#막대그래프-plotbar" id="toc-막대그래프-plotbar" class="nav-link" data-scroll-target="#막대그래프-plotbar">막대그래프 (plotbar)</a></li>
+  <li><a href="#막대그래프-크기순으로-정렬" id="toc-막대그래프-크기순으로-정렬" class="nav-link" data-scroll-target="#막대그래프-크기순으로-정렬">막대그래프 (크기순으로 정렬)</a></li>
+  <li><a href="#막대그래프-barplot" id="toc-막대그래프-barplot" class="nav-link" data-scroll-target="#막대그래프-barplot">막대그래프 (barplot)</a></li>
+  <li><a href="#막대그래프-countplot" id="toc-막대그래프-countplot" class="nav-link" data-scroll-target="#막대그래프-countplot">막대그래프 (countplot)</a></li>
+  <li><a href="#plotly-산점도" id="toc-plotly-산점도" class="nav-link" data-scroll-target="#plotly-산점도">plotly 산점도</a></li>
+  <li><a href="#mpg-데이터의-cty도시-연비와-hwy고속도로-연비간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어-보세요." id="toc-mpg-데이터의-cty도시-연비와-hwy고속도로-연비간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어-보세요." class="nav-link" data-scroll-target="#mpg-데이터의-cty도시-연비와-hwy고속도로-연비간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어-보세요.">mpg 데이터의 cty(도시 연비)와 hwy(고속도로 연비)간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어 보세요.</a></li>
+  <li><a href="#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요." id="toc-미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요." class="nav-link" data-scroll-target="#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.">미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.</a></li>
+  <li><a href="#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요." id="toc-어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요." class="nav-link" data-scroll-target="#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.">어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.</a></li>
+  <li><a href="#자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요." id="toc-자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요." class="nav-link" data-scroll-target="#자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.">자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-jolla content">
-  <img src="bori.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <main class="content quarto-banner-title-block" id="quarto-document-content">
-<section id="ls빅데이터스쿨-윤대웅-입니다." class="level4">
-<h4 data-anchor-id="ls빅데이터스쿨-윤대웅-입니다.">LS빅데이터스쿨 윤대웅 입니다.</h4>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="데이터-및-패키지-로드" class="level2">
+<h2 class="anchored" data-anchor-id="데이터-및-패키지-로드">데이터 및 패키지 로드</h2>
+<div id="7b1acba9" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Downloads/mpg.csv"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>mpg.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>(234, 11)</code></pre>
+</div>
+</div>
+</section>
+<section id="산점도-만들기" class="level2">
+<h2 class="anchored" data-anchor-id="산점도-만들기">산점도 만들기</h2>
+<div id="8acadcff" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>mpg, x<span class="op">=</span><span class="st">"displ"</span>, y<span class="op">=</span><span class="st">"hwy"</span>) <span class="op">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">set</span>(xlim <span class="op">=</span> [<span class="dv">3</span>,<span class="dv">6</span>], ylim<span class="op">=</span>[<span class="dv">10</span>, <span class="dv">30</span>])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>mpg, x<span class="op">=</span><span class="st">"displ"</span>, y<span class="op">=</span><span class="st">"hwy"</span>, hue <span class="op">=</span> <span class="st">'drv'</span>) <span class="op">\</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a> .<span class="bu">set</span>(xlim <span class="op">=</span> [<span class="dv">3</span>,<span class="dv">6</span>], ylim<span class="op">=</span>[<span class="dv">10</span>, <span class="dv">30</span>])</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-3-output-1.png" width="608" height="434" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-3-output-2.png" width="608" height="434" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="막대그래프-plotbar" class="level3">
+<h3 class="anchored" data-anchor-id="막대그래프-plotbar">막대그래프 (plotbar)</h3>
+<div id="8deb8359" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_mpg <span class="op">=</span> mpg.groupby(<span class="st">"drv"</span>, as_index <span class="op">=</span> <span class="va">False</span>).agg(mean_hwy <span class="op">=</span> (<span class="st">"hwy"</span>, <span class="st">"mean"</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> df_mpg.sort_values(<span class="st">"mean_hwy"</span>), </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"drv"</span>, y <span class="op">=</span> <span class="st">"mean_hwy"</span>, hue <span class="op">=</span> <span class="st">"drv"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" width="585" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="막대그래프-크기순으로-정렬" class="level3">
+<h3 class="anchored" data-anchor-id="막대그래프-크기순으로-정렬">막대그래프 (크기순으로 정렬)</h3>
+<div id="454afa81" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>df_mpg.sort_values(<span class="st">"mean_hwy"</span>, ascending <span class="op">=</span> <span class="va">False</span>), </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"drv"</span>, y <span class="op">=</span> <span class="st">"mean_hwy"</span>, hue <span class="op">=</span> <span class="st">"drv"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-1.png" width="585" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="막대그래프-barplot" class="level3">
+<h3 class="anchored" data-anchor-id="막대그래프-barplot">막대그래프 (barplot)</h3>
+<div id="d5a81ce8" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df_mpg <span class="op">=</span> mpg.groupby(<span class="st">"drv"</span>, as_index <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    .agg(mean_hwy <span class="op">=</span> (<span class="st">"hwy"</span>, <span class="st">"mean"</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>sns.barplot(data <span class="op">=</span> df_mpg.sort_values(<span class="st">"mean_hwy"</span>),  <span class="co">#정렬 추가</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>            x <span class="op">=</span> <span class="st">"drv"</span>, y <span class="op">=</span> <span class="st">"mean_hwy"</span>, hue <span class="op">=</span> <span class="st">"drv"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-6-output-1.png" width="585" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="막대그래프-countplot" class="level3">
+<h3 class="anchored" data-anchor-id="막대그래프-countplot">막대그래프 (countplot)</h3>
+<div id="fe8e0cb8" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.countplot(data<span class="op">=</span>mpg, x<span class="op">=</span> <span class="st">"drv"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-7-output-1.png" width="593" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="plotly-산점도" class="level3">
+<h3 class="anchored" data-anchor-id="plotly-산점도">plotly 산점도</h3>
+<div id="b362435f" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>px.scatter(data_frame <span class="op">=</span> mpg, x <span class="op">=</span> <span class="st">'cty'</span>, y <span class="op">=</span> <span class="st">'hwy'</span>, color <span class="op">=</span> <span class="st">'drv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>                            <div id="58cff993-4d3e-4960-9610-831005a3233d" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("58cff993-4d3e-4960-9610-831005a3233d")) {                    Plotly.newPlot(                        "58cff993-4d3e-4960-9610-831005a3233d",                        [{"hovertemplate":"drv=f\u003cbr\u003ecty=%{x}\u003cbr\u003ehwy=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"f","orientation":"v","showlegend":true,"x":[18,21,20,21,16,18,18,19,22,18,18,17,18,17,16,16,17,17,11,15,15,16,16,28,24,25,23,24,26,25,24,21,18,18,21,21,18,18,19,19,19,20,20,17,16,17,21,19,23,23,19,19,18,19,19,18,16,17,18,16,21,21,21,21,18,18,19,21,21,21,22,18,18,18,24,24,26,28,26,21,19,21,22,17,33,21,19,22,21,21,21,16,17,35,29,21,19,20,20,21,18,19,21,16,18,17],"xaxis":"x","y":[29,29,31,30,26,26,27,27,30,26,29,26,24,24,22,22,24,24,17,22,21,23,23,33,32,32,29,32,34,36,36,29,26,27,30,31,26,26,28,26,29,28,27,24,24,24,29,27,31,32,27,26,26,25,25,26,26,27,28,25,29,27,31,31,26,26,28,27,29,31,31,26,26,27,30,33,35,37,35,29,26,29,29,24,44,29,26,29,29,29,29,23,24,44,41,29,26,28,29,29,29,28,29,26,26,26],"yaxis":"y","type":"scatter"},{"hovertemplate":"drv=4\u003cbr\u003ecty=%{x}\u003cbr\u003ehwy=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"4","marker":{"color":"#EF553B","symbol":"circle"},"mode":"markers","name":"4","orientation":"v","showlegend":true,"x":[18,16,20,19,15,17,17,15,15,17,16,14,11,11,14,15,14,13,14,14,14,9,11,11,13,13,9,13,11,13,11,12,9,13,13,12,9,11,11,13,11,14,15,14,13,13,13,14,14,13,13,13,11,13,17,15,15,14,9,14,13,11,11,12,12,11,14,13,13,13,14,15,14,12,18,18,20,19,20,18,21,19,19,19,20,20,19,20,15,16,15,15,16,14,11,13,15,16,17,15,15,15,16],"xaxis":"x","y":[26,25,28,27,25,25,25,25,24,25,23,19,14,15,17,19,18,17,17,19,19,12,17,15,17,17,12,17,16,18,15,16,12,17,17,16,12,15,16,17,15,17,19,17,19,19,17,17,17,16,16,17,15,17,22,19,20,17,12,19,18,14,15,18,18,15,17,19,19,17,17,17,20,18,25,24,27,25,26,23,26,26,26,26,25,27,25,27,20,20,19,17,20,17,15,18,20,20,22,17,19,18,20],"yaxis":"y","type":"scatter"},{"hovertemplate":"drv=r\u003cbr\u003ecty=%{x}\u003cbr\u003ehwy=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"r","marker":{"color":"#00cc96","symbol":"circle"},"mode":"markers","name":"r","orientation":"v","showlegend":true,"x":[14,11,14,13,12,16,15,16,15,15,11,11,12,18,18,17,16,15,15,15,15,14,11,11,12],"xaxis":"x","y":[20,15,20,17,17,26,23,26,25,24,17,17,18,26,25,26,24,21,22,23,22,20,17,16,18],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"cty"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"hwy"}},"legend":{"title":{"text":"drv"},"tracegroupgap":0}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('58cff993-4d3e-4960-9610-831005a3233d');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+</div>
+</div>
+</section>
+<section id="mpg-데이터의-cty도시-연비와-hwy고속도로-연비간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어-보세요." class="level3">
+<h3 class="anchored" data-anchor-id="mpg-데이터의-cty도시-연비와-hwy고속도로-연비간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어-보세요.">mpg 데이터의 cty(도시 연비)와 hwy(고속도로 연비)간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어 보세요.</h3>
+<div id="819d581a" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Downloads/mpg.csv"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> mpg, x<span class="op">=</span><span class="st">'cty'</span>, y<span class="op">=</span><span class="st">'hwy'</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-9-output-1.png" width="585" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요." class="level3">
+<h3 class="anchored" data-anchor-id="미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.">미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.</h3>
+<div id="e1f44f23" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Downloads/midwest.csv"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> midwest, x<span class="op">=</span> <span class="st">'poptotal'</span>, y<span class="op">=</span> <span class="st">'popasian'</span>).<span class="bu">set</span>(xlim<span class="op">=</span> (<span class="dv">0</span>, <span class="dv">5000000</span>), ylim<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">10000</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="614" height="434" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요." class="level3">
+<h3 class="anchored" data-anchor-id="어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.">어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.</h3>
+<div id="d57ad6b0" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#mpg = pd.read_csv("C:/Users/USER/Downloads/mpg.csv")</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#mpg_suv = mpg.query('category == "suv"').groupby('manufacturer', as_index = True).agg(n = ('cty', 'mean'))</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.barplot(data = mpg_suv.sort_values("n", ascending = False).head(5), x = 'manufacturer', y = 'n')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요." class="level3">
+<h3 class="anchored" data-anchor-id="자동차-중에-어떤-category자동차-종류가-많은지-알아보려고-합니다.-sns.barplot을-이용해-자동차-종류별-빈도를-표현한-막대-그래프를-만들어-보세요.-막대는-빈도가-높은-순으로-정렬하세요.">자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.</h3>
+<div id="c66ddefe" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#df_mpg = mpg.groupby('category', as_index=False).agg(count = ('category', 'count')).sort_values('count', ascending=False)</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#df_mpg</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#import seaborn as sns</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.barplot(data= df_mpg, x = 'category' , y = 'count')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://twitter.com" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">twitter</span>
-  </a>
-  <a href="https://github.com/sy-source/myweb_site" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -167,6 +448,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

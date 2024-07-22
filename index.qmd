@@ -1,0 +1,16 @@
+---
+title: "슬기로운 웅이생활"
+toc: false
+about:
+  id: hero-heading
+  template: jolla
+  image: bori.jpg
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+
