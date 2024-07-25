@@ -543,6 +543,6 @@
     "href": "posts/hw4/index.html#x-n2-32",
     "title": "hw4",
     "section": "X ~ N(2, 3^2)",
-    "text": "X ~ N(2, 3^2)\n\ncdf : 누적분포함수\n\nimport scipy.stats as stats\n\nmu = 2\nsigma = 3\n\n# 1) P(X &lt; 3)\nprob_a = stats.norm.cdf(3, loc=mu, scale=3)\nprob_a\n\n# 2) P(2 &lt; X &lt; 5)\nprob_b = stats.norm.cdf(5, loc=mu, scale=3) - stats.norm.cdf(2, loc=mu, scale=sigma)\nprob_b\n\n# 3) P(X &lt; 3 or X &gt; 7)\nprob_c = stats.norm.cdf(3, loc=mu, scale=3) + (1 - stats.norm.cdf(7, loc=mu, scale=sigma))\nprob_c\n\nnp.float64(0.678349012091051)"
+    "text": "X ~ N(2, 3^2)\n\ncdf : 누적분포함수\n\nimport scipy.stats as stats\n\nmu = 2\nsigma = 3\n\n# 1) P(X &lt; 3)\nprob_a = stats.norm.cdf(3, loc=2, scale=3)\nprob_a\n\n# 2) P(2 &lt; X &lt; 5)\nprob_b = stats.norm.cdf(5, loc=2, scale=3) - stats.norm.cdf(2, loc=2, scale=3)\nprob_b\n\n# 3) P(X &lt; 3 or X &gt; 7)\n# 1번째 방법 (0.3+(1-0.7))\nprob_c = stats.norm.cdf(3, loc=2, scale=3) + (1 - stats.norm.cdf(7, loc=2, scale=3))\nprob_c\n\n# 2번째 방법 (1-(0.7-0.3))\nprob_d = 1 - (stats.norm.cdf(7, loc=2, scale=3) - stats.norm.cdf(3, loc=2, scale=3))\nprob_d\n\nnp.float64(0.678349012091051)"
   }
 ]

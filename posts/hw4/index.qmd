@@ -43,17 +43,21 @@ mu = 2
 sigma = 3
 
 # 1) P(X < 3)
-prob_a = stats.norm.cdf(3, loc=mu, scale=3)
+prob_a = stats.norm.cdf(3, loc=2, scale=3)
 prob_a
 
 # 2) P(2 < X < 5)
-prob_b = stats.norm.cdf(5, loc=mu, scale=3) - stats.norm.cdf(2, loc=mu, scale=sigma)
+prob_b = stats.norm.cdf(5, loc=2, scale=3) - stats.norm.cdf(2, loc=2, scale=3)
 prob_b
 
 # 3) P(X < 3 or X > 7)
-prob_c = stats.norm.cdf(3, loc=mu, scale=3) + (1 - stats.norm.cdf(7, loc=mu, scale=sigma))
+# 1번째 방법 (0.3+(1-0.7))
+prob_c = stats.norm.cdf(3, loc=2, scale=3) + (1 - stats.norm.cdf(7, loc=2, scale=3))
 prob_c
 
+# 2번째 방법 (1-(0.7-0.3))
+prob_d = 1 - (stats.norm.cdf(7, loc=2, scale=3) - stats.norm.cdf(3, loc=2, scale=3))
+prob_d
 
 ```
 
