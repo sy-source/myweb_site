@@ -40,9 +40,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-#mpg = pd.read_csv("C:/Users/USER/Downloads/mpg.csv")
+mpg = pd.read_csv("C:/Users/USER/Downloads/mpg.csv")
 
-#mpg_suv = mpg.query('category == "suv"').groupby('manufacturer', as_index = True).agg(n = ('cty', 'mean'))
+mpg_suv = mpg.query('category == "suv"').groupby('manufacturer', as_index = True).agg(n = ('cty', 'mean'))
 
 #sns.barplot(data = mpg_suv.sort_values("n", ascending = False).head(5), x = 'manufacturer', y = 'n')
 

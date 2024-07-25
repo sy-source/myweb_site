@@ -130,7 +130,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\nhi"
+    "text": "Hi. I’m Woong\n“Hello World!”"
   },
   {
     "objectID": "index.html",
@@ -354,7 +354,7 @@
     "href": "blog.html",
     "title": "숙제",
     "section": "",
-    "text": "hw2\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n윤대웅\n\n\n\n\n\n\nNo matching items"
+    "text": "hw2\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n윤대웅\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "graph.html",
@@ -396,7 +396,7 @@
     "href": "docs/gra1.html",
     "title": "hw3",
     "section": "",
-    "text": "mpg 데이터의 cty(도시 연비)와 hwy(고속도로 연비)간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어 보세요.\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n\nmpg = pd.read_csv(\"C:/Users/USER/Downloads/mpg.csv\")\nsns.scatterplot(data = mpg, x='cty', y='hwy')\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv(\"C:/Users/USER/Downloads/midwest.csv\")\nsns.scatterplot(data = midwest, x= 'poptotal', y= 'popasian').set(xlim= (0, 5000000), ylim=(0,10000))\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n#mpg = pd.read_csv(\"C:/Users/USER/Downloads/mpg.csv\")\n\n#mpg_suv = mpg.query('category == \"suv\"').groupby('manufacturer', as_index = True).agg(n = ('cty', 'mean'))\n\n#sns.barplot(data = mpg_suv.sort_values(\"n\", ascending = False).head(5), x = 'manufacturer', y = 'n')\n\n\n\n자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n\n#df_mpg = mpg.groupby('category', as_index=False).agg(count = ('category', 'count')).sort_values('count', ascending=False)\n#df_mpg\n\n#import seaborn as sns\n#sns.barplot(data= df_mpg, x = 'category' , y = 'count')"
+    "text": "mpg 데이터의 cty(도시 연비)와 hwy(고속도로 연비)간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어 보세요.\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n\nmpg = pd.read_csv(\"C:/Users/USER/Downloads/mpg.csv\")\nsns.scatterplot(data = mpg, x='cty', y='hwy')\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv(\"C:/Users/USER/Downloads/midwest.csv\")\nsns.scatterplot(data = midwest, x= 'poptotal', y= 'popasian').set(xlim= (0, 5000000), ylim=(0,10000))\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nmpg = pd.read_csv(\"C:/Users/USER/Downloads/mpg.csv\")\n\nmpg_suv = mpg.query('category == \"suv\"').groupby('manufacturer', as_index = True).agg(n = ('cty', 'mean'))\n\n#sns.barplot(data = mpg_suv.sort_values(\"n\", ascending = False).head(5), x = 'manufacturer', y = 'n')\n\n\n\n자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n\n#df_mpg = mpg.groupby('category', as_index=False).agg(count = ('category', 'count')).sort_values('count', ascending=False)\n#df_mpg\n\n#import seaborn as sns\n#sns.barplot(data= df_mpg, x = 'category' , y = 'count')"
   },
   {
     "objectID": "docs/gra1.html#데이터-및-패키지-로드",
@@ -438,7 +438,7 @@
     "href": "posts/hw3/index.html",
     "title": "hw3",
     "section": "",
-    "text": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n\nmpg = pd.read_csv(\"C:/Users/USER/Downloads/mpg.csv\")\nmpg.shape\n\n(234, 11)"
+    "text": "데이터 및 패키지 로드\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n\nmpg = pd.read_csv(\"C:/Users/USER/Downloads/mpg.csv\")\nmpg.shape\n\n(234, 11)\n\n\n\n\n산점도 만들기\n\nsns.scatterplot(data=mpg, x=\"displ\", y=\"hwy\") \\\n    .set(xlim = [3,6], ylim=[10, 30])\nplt.show()\n\nsns.scatterplot(data=mpg, x=\"displ\", y=\"hwy\", hue = 'drv') \\\n .set(xlim = [3,6], ylim=[10, 30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n막대그래프 (plotbar)\n\ndf_mpg = mpg.groupby(\"drv\", as_index = False).agg(mean_hwy = (\"hwy\", \"mean\"))\n\nsns.barplot(data = df_mpg.sort_values(\"mean_hwy\"), \n            x = \"drv\", y = \"mean_hwy\", hue = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n막대그래프 (크기순으로 정렬)\n\nplt.clf()\nsns.barplot(data=df_mpg.sort_values(\"mean_hwy\", ascending = False), \n            x = \"drv\", y = \"mean_hwy\", hue = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n막대그래프 (barplot)\n\nimport plotly.express as px\n\ndf_mpg = mpg.groupby(\"drv\", as_index = False) \\\n    .agg(mean_hwy = (\"hwy\", \"mean\"))\nplt.clf()\nsns.barplot(data = df_mpg.sort_values(\"mean_hwy\"),  #정렬 추가\n            x = \"drv\", y = \"mean_hwy\", hue = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n막대그래프 (countplot)\n\nplt.clf()\nsns.countplot(data=mpg, x= \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\nplotly 산점도\n\nimport plotly.express as px\npx.scatter(data_frame = mpg, x = 'cty', y = 'hwy', color = 'drv')\n\n                                                \n\n\n\n\nmpg 데이터의 cty(도시 연비)와 hwy(고속도로 연비)간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어 보세요.\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n\nmpg = pd.read_csv(\"C:/Users/USER/Downloads/mpg.csv\")\nsns.scatterplot(data = mpg, x='cty', y='hwy')\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv(\"C:/Users/USER/Downloads/midwest.csv\")\nsns.scatterplot(data = midwest, x= 'poptotal', y= 'popasian').set(xlim= (0, 5000000), ylim=(0,10000))\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n#mpg = pd.read_csv(\"C:/Users/USER/Downloads/mpg.csv\")\n\n#mpg_suv = mpg.query('category == \"suv\"').groupby('manufacturer', as_index = True).agg(n = ('cty', 'mean'))\n\n#sns.barplot(data = mpg_suv.sort_values(\"n\", ascending = False).head(5), x = 'manufacturer', y = 'n')\n\n\n\n자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n\n#df_mpg = mpg.groupby('category', as_index=False).agg(count = ('category', 'count')).sort_values('count', ascending=False)\n#df_mpg\n\n#import seaborn as sns\n#sns.barplot(data= df_mpg, x = 'category' , y = 'count')"
   },
   {
     "objectID": "gra.html",
@@ -474,5 +474,75 @@
     "title": "hw3",
     "section": "산점도 만들기",
     "text": "산점도 만들기\n\nsns.scatterplot(data=mpg, x=\"displ\", y=\"hwy\") \\\n    .set(xlim = [3,6], ylim=[10, 30])\nplt.show()\n\nsns.scatterplot(data=mpg, x=\"displ\", y=\"hwy\", hue = 'drv') \\\n .set(xlim = [3,6], ylim=[10, 30])\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n막대그래프 (plotbar)\n\ndf_mpg = mpg.groupby(\"drv\", as_index = False).agg(mean_hwy = (\"hwy\", \"mean\"))\n\nsns.barplot(data = df_mpg.sort_values(\"mean_hwy\"), \n            x = \"drv\", y = \"mean_hwy\", hue = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n막대그래프 (크기순으로 정렬)\n\nplt.clf()\nsns.barplot(data=df_mpg.sort_values(\"mean_hwy\", ascending = False), \n            x = \"drv\", y = \"mean_hwy\", hue = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n막대그래프 (barplot)\n\nimport plotly.express as px\n\ndf_mpg = mpg.groupby(\"drv\", as_index = False) \\\n    .agg(mean_hwy = (\"hwy\", \"mean\"))\nplt.clf()\nsns.barplot(data = df_mpg.sort_values(\"mean_hwy\"),  #정렬 추가\n            x = \"drv\", y = \"mean_hwy\", hue = \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n막대그래프 (countplot)\n\nplt.clf()\nsns.countplot(data=mpg, x= \"drv\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\nplotly 산점도\n\nimport plotly.express as px\npx.scatter(data_frame = mpg, x = 'cty', y = 'hwy', color = 'drv')\n\n                                                \n\n\n\n\nmpg 데이터의 cty(도시 연비)와 hwy(고속도로 연비)간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어 보세요.\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nimport plotly.express as px\n\nmpg = pd.read_csv(\"C:/Users/USER/Downloads/mpg.csv\")\nsns.scatterplot(data = mpg, x='cty', y='hwy')\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv(\"C:/Users/USER/Downloads/midwest.csv\")\nsns.scatterplot(data = midwest, x= 'poptotal', y= 'popasian').set(xlim= (0, 5000000), ylim=(0,10000))\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n#mpg = pd.read_csv(\"C:/Users/USER/Downloads/mpg.csv\")\n\n#mpg_suv = mpg.query('category == \"suv\"').groupby('manufacturer', as_index = True).agg(n = ('cty', 'mean'))\n\n#sns.barplot(data = mpg_suv.sort_values(\"n\", ascending = False).head(5), x = 'manufacturer', y = 'n')\n\n\n\n자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n\n#df_mpg = mpg.groupby('category', as_index=False).agg(count = ('category', 'count')).sort_values('count', ascending=False)\n#df_mpg\n\n#import seaborn as sns\n#sns.barplot(data= df_mpg, x = 'category' , y = 'count')"
+  },
+  {
+    "objectID": "hw4.html",
+    "href": "hw4.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "1. 정규분포 pdf 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3, sigma = 2 의 pdf를 그릴 것.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nmu = 3\nsigma = 2\nx = np.linspace(-5, 11, 1000)\n\ndef pdf_a (x, mu, sigma) : return (1 / (np.sqrt(2 * np.pi) * sigma)) * np.exp(-0.5 * ((x - mu) / sigma) ** 2)\n\npdf = pdf_a(x, mu, sigma)\n\nplt.plot(x, pdf)\nplt.show()\n\n\n\n\n\n\n\n\n\n### 2. 파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오.\n# X ~ N(2, 3^2)\n\n# 1) P(X &lt; 3)\n\n# 2) P(2 &lt; X &lt; 5)\n\n# 3) P(X &lt; 3 or X &gt; 7)\n\n\n### 3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?"
+  },
+  {
+    "objectID": "hw4.html#def-return-함수를-사용",
+    "href": "hw4.html#def-return-함수를-사용",
+    "title": "Untitled",
+    "section": "def / return 함수를 사용",
+    "text": "def / return 함수를 사용\n정규분포.png\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nmu = 3\nsigma = 2\nx = np.linspace(-5, 11, 1000)\n\ndef pdf_a (x, mu, sigma) : return (1 / (np.sqrt(2 * np.pi) * sigma)) * np.exp(-0.5 * ((x - mu) / sigma) ** 2)\n\npdf = pdf_a(x, mu, sigma)\n\n\nplt.plot(x, pdf)\nplt.show()\n\n\n\n\n\n\n\n\n\n2. 파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오."
+  },
+  {
+    "objectID": "hw4.html#cdf-누적분포함수",
+    "href": "hw4.html#cdf-누적분포함수",
+    "title": "Untitled",
+    "section": "cdf : 누적분포함수",
+    "text": "cdf : 누적분포함수\n\n# 1) P(X &lt; 3)\nimport scipy.stats as stats\n\nmu = 2\nsigma = 3\n\n# 1) P(X &lt; 3)\nprob_a = stats.norm.cdf(3, loc=mu, scale=3)\nprob_a\n\n# 2) P(2 &lt; X &lt; 5)\nprob_b = stats.norm.cdf(5, loc=mu, scale=3) - stats.norm.cdf(2, loc=mu, scale=sigma)\nprob_b\n\n# 3) P(X &lt; 3 or X &gt; 7)\nprob_c = stats.norm.cdf(3, loc=mu, scale=3) + (1 - stats.norm.cdf(7, loc=mu, scale=sigma))\nprob_c\n\nnp.float64(0.678349012091051)\n\n\n\n3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?"
+  },
+  {
+    "objectID": "hw4.html#def-return-함수를-사용-scipy.stats-사용-x",
+    "href": "hw4.html#def-return-함수를-사용-scipy.stats-사용-x",
+    "title": "Untitled",
+    "section": "def / return 함수를 사용 (scipy.stats 사용 X)",
+    "text": "def / return 함수를 사용 (scipy.stats 사용 X)\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nmu = 3\nsigma = 2\nx = np.linspace(-5, 11, 1000)\n\ndef pdf_a (x, mu, sigma) : return (1 / (np.sqrt(2 * np.pi) * sigma)) * np.exp(-0.5 * ((x - mu) / sigma) ** 2)\n\npdf = pdf_a(x, mu, sigma)\n\n\nplt.plot(x, pdf)\nplt.show()\n\n\n\n\n\n\n\n\n\n2. 파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오."
+  },
+  {
+    "objectID": "hw4.html#ppf-퀀타일-함수",
+    "href": "hw4.html#ppf-퀀타일-함수",
+    "title": "Untitled",
+    "section": "ppf : 퀀타일 함수",
+    "text": "ppf : 퀀타일 함수\n\nimport scipy.stats as stats\n\nmu = 30\nsigma = 2 #표준편차 : 분산의 제곱근\n\nppf = stats.norm.ppf(0.95, loc=30, scale=2) #누적확률 95% -&gt; 상위5% (상위 5% = 하위95%)\n\nppf\n\nnp.float64(33.28970725390295)"
+  },
+  {
+    "objectID": "posts/hw4/index.html#def-return-함수를-사용-scipy.stats-사용-x",
+    "href": "posts/hw4/index.html#def-return-함수를-사용-scipy.stats-사용-x",
+    "title": "hw4",
+    "section": "def / return 함수를 사용 (scipy.stats 사용 X)",
+    "text": "def / return 함수를 사용 (scipy.stats 사용 X)\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nmu = 3\nsigma = 2\nx = np.linspace(-5, 11, 1000)\n\ndef pdf_a (x, mu, sigma) : return (1 / (np.sqrt(2 * np.pi) * sigma)) * np.exp(-0.5 * ((x - mu) / sigma) ** 2)\n\npdf = pdf_a(x, mu, sigma)\n\n\nplt.plot(x, pdf)\nplt.show()\n\n\n\n\n\n\n\n\n\n2. 파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오."
+  },
+  {
+    "objectID": "posts/hw4/index.html#cdf-누적분포함수",
+    "href": "posts/hw4/index.html#cdf-누적분포함수",
+    "title": "hw4",
+    "section": "cdf : 누적분포함수",
+    "text": "cdf : 누적분포함수\n\n# 1) P(X &lt; 3)\nimport scipy.stats as stats\n\nmu = 2\nsigma = 3\n\n# 1) P(X &lt; 3)\nprob_a = stats.norm.cdf(3, loc=mu, scale=3)\nprob_a\n\n# 2) P(2 &lt; X &lt; 5)\nprob_b = stats.norm.cdf(5, loc=mu, scale=3) - stats.norm.cdf(2, loc=mu, scale=sigma)\nprob_b\n\n# 3) P(X &lt; 3 or X &gt; 7)\nprob_c = stats.norm.cdf(3, loc=mu, scale=3) + (1 - stats.norm.cdf(7, loc=mu, scale=sigma))\nprob_c\n\nnp.float64(0.678349012091051)\n\n\n\n3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?"
+  },
+  {
+    "objectID": "posts/hw4/index.html#ppf-퀀타일-함수",
+    "href": "posts/hw4/index.html#ppf-퀀타일-함수",
+    "title": "hw4",
+    "section": "ppf : 퀀타일 함수",
+    "text": "ppf : 퀀타일 함수\n\nimport scipy.stats as stats\n\nmu = 30\nsigma = 2 #표준편차 : 분산의 제곱근\n\nppf = stats.norm.ppf(0.95, loc=30, scale=2) #누적확률 95% -&gt; 상위5% (상위 5% = 하위95%)\n\nppf\n\nnp.float64(33.28970725390295)"
+  },
+  {
+    "objectID": "posts/hw4/index.html",
+    "href": "posts/hw4/index.html",
+    "title": "hw4",
+    "section": "",
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\n\nmu = 3\nsigma = 2\nx = np.linspace(-5, 11, 1000)\n\ndef pdf_a (x, mu, sigma) : return (1 / (np.sqrt(2 * np.pi) * sigma)) * np.exp(-0.5 * ((x - mu) / sigma) ** 2)\n\npdf = pdf_a(x, mu, sigma)\n\n\nplt.plot(x, pdf)\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw4/index.html#x-n2-32",
+    "href": "posts/hw4/index.html#x-n2-32",
+    "title": "hw4",
+    "section": "X ~ N(2, 3^2)",
+    "text": "X ~ N(2, 3^2)\n\ncdf : 누적분포함수\n\nimport scipy.stats as stats\n\nmu = 2\nsigma = 3\n\n# 1) P(X &lt; 3)\nprob_a = stats.norm.cdf(3, loc=mu, scale=3)\nprob_a\n\n# 2) P(2 &lt; X &lt; 5)\nprob_b = stats.norm.cdf(5, loc=mu, scale=3) - stats.norm.cdf(2, loc=mu, scale=sigma)\nprob_b\n\n# 3) P(X &lt; 3 or X &gt; 7)\nprob_c = stats.norm.cdf(3, loc=mu, scale=3) + (1 - stats.norm.cdf(7, loc=mu, scale=sigma))\nprob_c\n\nnp.float64(0.678349012091051)"
   }
 ]
