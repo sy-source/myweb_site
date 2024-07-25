@@ -32,9 +32,10 @@ plt.show()
 # 2. 파이썬 scipy 패키지 사용해서 다음과 같은 확률을 구하시오.
 
 ## X \~ N(2, 3\^2)
-
 ### cdf : 누적분포함수
 
+
+### 1) P(X < 3)
 ```{python}
 
 import scipy.stats as stats
@@ -46,9 +47,22 @@ sigma = 3
 prob_a = stats.norm.cdf(3, loc=2, scale=3)
 prob_a
 
+```
+
+### 2) P(2 < X < 5)
+
+```{python}
+
 # 2) P(2 < X < 5)
 prob_b = stats.norm.cdf(5, loc=2, scale=3) - stats.norm.cdf(2, loc=2, scale=3)
 prob_b
+
+
+```
+
+### 3) P(X < 3 or X > 7)
+
+```{python}
 
 # 3) P(X < 3 or X > 7)
 # 1번째 방법 (0.3+(1-0.7))
@@ -60,6 +74,7 @@ prob_d = 1 - (stats.norm.cdf(7, loc=2, scale=3) - stats.norm.cdf(3, loc=2, scale
 prob_d
 
 ```
+
 
 # 3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?
 
