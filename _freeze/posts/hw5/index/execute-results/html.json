@@ -1,0 +1,12 @@
+{
+  "hash": "4207bfb0bd3257aadb872e627e6d2edd",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: hw5\nauthor: yoon\neditor: visual\n---\n\n### 균일분포 (3,7)에서 20개의 표본을 뽑아서 분산은 2가지 방법으로 추정 -\\> X \\~ U(a,b)\n\n### n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의(10000개 사용)\n\n## s_2\n\n::: {#73aa6627 .cell execution_count=1}\n``` {.python .cell-code}\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\n\ns_2 = x.var(axis=1, ddof=1) # ddof=1 -> n-1로 나눔\n\nplt.hist(s_2, color = 'blue')\nplt.axvline(x.var(), color='green') #모분산의 위치에 녹색막대\nplt.show()\nplt.clf()\n```\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-html/cell-2-output-1.png){width=583 height=414}\n:::\n\n::: {.cell-output .cell-output-display}\n```\n<Figure size 672x480 with 0 Axes>\n```\n:::\n:::\n\n\n## k_2\n\n::: {#2771f8e2 .cell execution_count=2}\n``` {.python .cell-code}\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx= x.reshape(-1,20)\n\nk_2 = x.var(axis=1, ddof=0) #ddof=0 -> n으로 나눔\n\nplt.hist(k_2, color = 'red')\nplt.axvline(x.var(), color='green') #모분산의 위치에(x.var()) 녹색막대\nplt.show()\nplt.clf()\n```\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-html/cell-3-output-1.png){width=583 height=411}\n:::\n\n::: {.cell-output .cell-output-display}\n```\n<Figure size 672x480 with 0 Axes>\n```\n:::\n:::\n\n\n## 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지\n\n::: {#99ae6f8c .cell execution_count=3}\n``` {.python .cell-code}\n# n−1로 나눈 s_2의 그래프를 보면, 녹색축인 모분산을 중심으로 왼쪽, 오른쪽 모두 고르게 분포가 되어있음.\n# n으로 나눈 k_2의 그래프를 보면, 녹색축인 모분산을 중심으로 왼쪽으로 치우쳐져 있음.(편향됨)\n# 결론적으로, n-1로 나눈 s_2 그래프가 모분산을 더 잘 나타내고 있음!! -> 표본 분산의 불편성 보장 <-\n```\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

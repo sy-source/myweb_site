@@ -354,7 +354,7 @@
     "href": "blog.html",
     "title": "숙제",
     "section": "",
-    "text": "hw2\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n윤대웅\n\n\n\n\n\n\nNo matching items"
+    "text": "hw2\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n윤대웅\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "graph.html",
@@ -544,5 +544,47 @@
     "title": "hw4",
     "section": "X ~ N(2, 3^2)",
     "text": "X ~ N(2, 3^2)\n\ncdf : 누적분포함수\n\n\n1) P(X &lt; 3)\n\nimport scipy.stats as stats\n\nmu = 2\nsigma = 3\n\n# 1) P(X &lt; 3)\nprob_a = stats.norm.cdf(3, loc=2, scale=3)\nprob_a\n\nnp.float64(0.6305586598182363)\n\n\n\n\n2) P(2 &lt; X &lt; 5)\n\n# 2) P(2 &lt; X &lt; 5)\nprob_b = stats.norm.cdf(5, loc=2, scale=3) - stats.norm.cdf(2, loc=2, scale=3)\nprob_b\n\nnp.float64(0.3413447460685429)\n\n\n\n\n3) P(X &lt; 3 or X &gt; 7)\n\n# 3) P(X &lt; 3 or X &gt; 7)\n# 1번째 방법 (0.3+(1-0.7))\nprob_c = stats.norm.cdf(3, loc=2, scale=3) + (1 - stats.norm.cdf(7, loc=2, scale=3))\nprob_c\n\n# 2번째 방법 (1-(0.7-0.3))\nprob_d = 1 - (stats.norm.cdf(7, loc=2, scale=3) - stats.norm.cdf(3, loc=2, scale=3))\nprob_d\n\nnp.float64(0.678349012091051)"
+  },
+  {
+    "objectID": "hw5.html#s_2",
+    "href": "hw5.html#s_2",
+    "title": "Untitled",
+    "section": "s_2",
+    "text": "s_2\n\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\n\ns_2 = x.var(axis=1, ddof=1) # ddof=1 -&gt; n-1로 나눔\n\nplt.hist(s_2, color = 'blue')\nplt.axvline(x.var(), color='green') #모분산의 위치에 녹색막대\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "hw5.html#k_2",
+    "href": "hw5.html#k_2",
+    "title": "Untitled",
+    "section": "k_2",
+    "text": "k_2\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx= x.reshape(-1,20)\n\nk_2 = x.var(axis=1, ddof=0) #ddof=0 -&gt; n으로 나눔\n\nplt.hist(k_2, color = 'red')\nplt.axvline(x.var(), color='green') #모분산의 위치에(x.var()) 녹색막대\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "hw5.html#결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지",
+    "href": "hw5.html#결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지",
+    "title": "Untitled",
+    "section": "결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지",
+    "text": "결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지\n\n# n−1로 나눈 s_2의 그래프를 보면, 녹색축인 모분산을 중심으로 왼쪽, 오른쪽 모두 고르게 분포가 되어있음.\n# n으로 나눈 k_2의 그래프를 보면, 녹색축인 모분산을 중심으로 왼쪽으로 치우쳐져 있음.(편향됨)\n# 결론적으로, n-1로 나눈 s_2 그래프가 모분산을 더 잘 나타내고 있음!! -&gt; 표본 분산의 불편성 보장 &lt;-"
+  },
+  {
+    "objectID": "posts/hw5/index.html#s_2",
+    "href": "posts/hw5/index.html#s_2",
+    "title": "hw5",
+    "section": "s_2",
+    "text": "s_2\n\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\n\ns_2 = x.var(axis=1, ddof=1) # ddof=1 -&gt; n-1로 나눔\n\nplt.hist(s_2, color = 'blue')\nplt.axvline(x.var(), color='green') #모분산의 위치에 녹색막대\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw5/index.html#k_2",
+    "href": "posts/hw5/index.html#k_2",
+    "title": "hw5",
+    "section": "k_2",
+    "text": "k_2\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx= x.reshape(-1,20)\n\nk_2 = x.var(axis=1, ddof=0) #ddof=0 -&gt; n으로 나눔\n\nplt.hist(k_2, color = 'red')\nplt.axvline(x.var(), color='green') #모분산의 위치에(x.var()) 녹색막대\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw5/index.html#결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지",
+    "href": "posts/hw5/index.html#결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지",
+    "title": "hw5",
+    "section": "결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지",
+    "text": "결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지\n\n# n−1로 나눈 s_2의 그래프를 보면, 녹색축인 모분산을 중심으로 왼쪽, 오른쪽 모두 고르게 분포가 되어있음.\n# n으로 나눈 k_2의 그래프를 보면, 녹색축인 모분산을 중심으로 왼쪽으로 치우쳐져 있음.(편향됨)\n# 결론적으로, n-1로 나눈 s_2 그래프가 모분산을 더 잘 나타내고 있음!! -&gt; 표본 분산의 불편성 보장 &lt;-"
   }
 ]

@@ -1,0 +1,56 @@
+---
+title: "hw5"
+author: "yoon"
+editor: visual
+jupyter: python3
+---
+
+### 균일분포 (3,7)에서 20개의 표본을 뽑아서 분산은 2가지 방법으로 추정 -\> X \~ U(a,b)
+
+### n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의(10000개 사용)
+
+## s_2
+
+```{python}
+
+from scipy.stats import uniform
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = uniform.rvs(loc=3, scale=4, size=20*10000)
+x = x.reshape(-1,20)
+
+s_2 = x.var(axis=1, ddof=1) # ddof=1 -> n-1로 나눔
+
+plt.hist(s_2, color = 'blue')
+plt.axvline(x.var(), color='green') #모분산의 위치에 녹색막대
+plt.show()
+plt.clf()
+
+```
+
+## k_2
+
+```{python}
+
+x = uniform.rvs(loc=3, scale=4, size=20*10000)
+x= x.reshape(-1,20)
+
+k_2 = x.var(axis=1, ddof=0) #ddof=0 -> n으로 나눔
+
+plt.hist(k_2, color = 'red')
+plt.axvline(x.var(), color='green') #모분산의 위치에(x.var()) 녹색막대
+plt.show()
+plt.clf()
+
+```
+
+## 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지
+
+```{python}
+
+# n−1로 나눈 s_2의 그래프를 보면, 녹색축인 모분산을 중심으로 왼쪽, 오른쪽 모두 고르게 분포가 되어있음.
+# n으로 나눈 k_2의 그래프를 보면, 녹색축인 모분산을 중심으로 왼쪽으로 치우쳐져 있음.(편향됨)
+# 결론적으로, n-1로 나눈 s_2 그래프가 모분산을 더 잘 나타내고 있음!! -> 표본 분산의 불편성 보장 <-
+
+```

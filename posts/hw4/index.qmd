@@ -57,14 +57,12 @@ prob_a
 prob_b = stats.norm.cdf(5, loc=2, scale=3) - stats.norm.cdf(2, loc=2, scale=3)
 prob_b
 
-
 ```
 
 ### 3) P(X < 3 or X > 7)
 
 ```{python}
 
-# 3) P(X < 3 or X > 7)
 # 1번째 방법 (0.3+(1-0.7))
 prob_c = stats.norm.cdf(3, loc=2, scale=3) + (1 - stats.norm.cdf(7, loc=2, scale=3))
 prob_c
