@@ -1,0 +1,72 @@
+---
+title: "hw6"
+editor: visual
+jupyter: python3
+---
+
+## 챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기
+
+## norm.ppf() 사용해서 그릴 것. 모분산은 표본 분산을 사용해서 추정
+
+### 챕터 9-2 설문조사 그래프 불러오기
+
+```{python}
+
+!pip install pyreadstat
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+raw_welfare = pd.read_spss("C:/Users/USER/Documents/LS빅데이터스쿨/myweb_site/data/koweps/Koweps_hpwc14_2019_beta2.sav")
+welfare = raw_welfare.copy()
+
+
+welfare= welfare.rename(
+    columns = {
+        "h14_g3" : "sex",
+        "h14_g4" : "birth",
+        "h14_g10" : "marrige_type",
+        "h14_g11" : "religion",
+        "p1402_8aq1" : "income",
+        "h14_eco9" : "code_job",
+        "h14_reg7" : "code_region"
+    }
+)
+
+welfare = welfare[["sex","birth", "marrige_type", "religion","income","code_job","code_region"]]
+
+welfare["sex"] = np.where(welfare["sex"] == 1.0, "male", "female")
+
+```
+
+## 각 성별 95% 신뢰구간 계산후 그리기
+
+```{python}
+
+sex_income = welfare.dropna(subset="income")\
+        .groupby("sex", as_index = False)\
+        .agg(mean_income = ("income","mean"),
+             std_income = ("income","std"),
+             count = ("sex","count"))
+sex_income
+
+
+# 각 성별의 95% 신뢰구간 계산
+sex_income['ci_upper'] = sex_income['mean_income'] + 1.96 * sex_income['std_income'] / np.sqrt(sex_income['count'])
+sex_income['ci_lower'] = sex_income['mean_income'] - 1.96 * sex_income['std_income'] / np.sqrt(sex_income['count'])
+
+sns.barplot(data=sex_income, x='sex', y='mean_income', hue="sex",errorbar=None)
+
+plt.errorbar(
+    x=sex_income['sex'],
+    y=sex_income['mean_income'], 
+    yerr=[sex_income['mean_income'] - sex_income['ci_lower'], sex_income['ci_upper'] - sex_income['mean_income']], 
+    fmt='none',  
+    capsize=20,  
+    color='red' 
+)
+plt.show()
+plt.clf()
+```
