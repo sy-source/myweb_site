@@ -354,7 +354,7 @@
     "href": "blog.html",
     "title": "숙제",
     "section": "",
-    "text": "hw2\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n윤대웅\n\n\n\n\n\n\nNo matching items"
+    "text": "hw2\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhw7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n윤대웅\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "graph.html",
@@ -600,5 +600,47 @@
     "title": "hw6",
     "section": "각 성별 95% 신뢰구간 계산후 그리기",
     "text": "각 성별 95% 신뢰구간 계산후 그리기\n\nsex_income = welfare.dropna(subset=\"income\")\\\n        .groupby(\"sex\", as_index = False)\\\n        .agg(mean_income = (\"income\",\"mean\"),\n             std_income = (\"income\",\"std\"),\n             count = (\"sex\",\"count\"))\nsex_income\n\n\n# 각 성별의 95% 신뢰구간 계산\nsex_income['ci_upper'] = sex_income['mean_income'] + 1.96 * sex_income['std_income'] / np.sqrt(sex_income['count'])\nsex_income['ci_lower'] = sex_income['mean_income'] - 1.96 * sex_income['std_income'] / np.sqrt(sex_income['count'])\n\nsns.barplot(data=sex_income, x='sex', y='mean_income', hue=\"sex\",errorbar=None)\n\nplt.errorbar(\n    x=sex_income['sex'],\n    y=sex_income['mean_income'], \n    yerr=[sex_income['mean_income'] - sex_income['ci_lower'], sex_income['ci_upper'] - sex_income['mean_income']], \n    fmt='none',  \n    capsize=20,  \n    color='red' \n)\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "hw7.html",
+    "href": "hw7.html",
+    "title": "hw7",
+    "section": "",
+    "text": "# H0: μ = 16.0\n# H1: μ != 16.0\n\nimport numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import norm"
+  },
+  {
+    "objectID": "hw7.html#가설-설정",
+    "href": "hw7.html#가설-설정",
+    "title": "hw7",
+    "section": "",
+    "text": "# H0: μ = 16.0\n# H1: μ != 16.0\n\nimport numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import norm"
+  },
+  {
+    "objectID": "hw7.html#검정통계량-계산",
+    "href": "hw7.html#검정통계량-계산",
+    "title": "hw7",
+    "section": "3. 검정통계량 계산",
+    "text": "3. 검정통계량 계산\n\ncar = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804])\n\nmu = 16.0\nn = len(car) # 15개\nx_bar = np.mean(car)\nstd = np.std(car, ddof=1) #표준편차 (ddof=1 -&gt; n-1)\n\nt_s = (x_bar - mu) / (std / np.sqrt(n))\nt_s\n\nnp.float64(-1.8500447456376756)"
+  },
+  {
+    "objectID": "posts/hw7/index.html",
+    "href": "posts/hw7/index.html",
+    "title": "hw7",
+    "section": "",
+    "text": "# H0: μ = 16.0\n# H1: μ != 16.0\n\nimport numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import norm"
+  },
+  {
+    "objectID": "posts/hw7/index.html#가설-설정",
+    "href": "posts/hw7/index.html#가설-설정",
+    "title": "hw7",
+    "section": "",
+    "text": "# H0: μ = 16.0\n# H1: μ != 16.0\n\nimport numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import norm"
+  },
+  {
+    "objectID": "posts/hw7/index.html#검정통계량-계산",
+    "href": "posts/hw7/index.html#검정통계량-계산",
+    "title": "hw7",
+    "section": "3. 검정통계량 계산",
+    "text": "3. 검정통계량 계산\n\ncar = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804])\n\nmu = 16.0\nn = len(car) # 15개\nx_bar = np.mean(car)\nstd = np.std(car, ddof=1) #표준편차 (ddof=1 -&gt; n-1)\n\nt_s = (x_bar - mu) / (std / np.sqrt(n))\nt_s\n\nnp.float64(-1.8500447456376756)"
   }
 ]
