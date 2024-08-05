@@ -627,14 +627,14 @@
     "href": "posts/hw7/index.html",
     "title": "hw7",
     "section": "",
-    "text": "# H0: μ = 16.0\n# H1: μ != 16.0\n\nimport numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import norm"
+    "text": "import numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import norm"
   },
   {
     "objectID": "posts/hw7/index.html#가설-설정",
     "href": "posts/hw7/index.html#가설-설정",
     "title": "hw7",
     "section": "",
-    "text": "# H0: μ = 16.0\n# H1: μ != 16.0\n\nimport numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import norm"
+    "text": "import numpy as np\nimport scipy.stats as stats\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import norm"
   },
   {
     "objectID": "posts/hw7/index.html#검정통계량-계산",

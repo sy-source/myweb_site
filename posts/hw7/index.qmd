@@ -6,14 +6,10 @@ jupyter: python3
 
 ## 2. 가설 설정
 
-### H0: μ = 16.0/ H1: μ != 16.0
-
-### 𝐻𝑎 ∶ 𝜇 ≠ 𝜇0 인 경우 2𝑃 (𝑇 ≥ \|𝑡\|)
+### H0 : mu >= 16.0 
+### H1 : mu < 16.0 
 
 ```{python}
-
-# H0: μ = 16.0
-# H1: μ != 16.0
 
 import numpy as np
 import scipy.stats as stats
@@ -46,15 +42,12 @@ t_s
 
 from scipy.stats import t
 
-# 절대값(abs) 사용하지 않은 경우
-a_value = 2 * (1 - t.cdf((t_s), df=n-1))
-a_value
-
-# 절대값(abs) 사용 한 경우
-p_value = 2 * (1 - t.cdf(abs(t_s), df=n-1))
+from scipy.stats import t
+p_value = t.cdf(t_s, df=n-1)
 p_value
 
-print("절대값을 하지 않은 p-value는",a_value,"이고","절대값을 한 p-value는",p_value,"이다" )
+print("p-value는",p_value, "이고 p-value가 0.01보다 높아 기각할 수 없다.")
+
 
 ```
 
@@ -70,6 +63,5 @@ a = x_bar + t.ppf(0.025, df) * (std/np.sqrt(n))
 b = x_bar + t.ppf(0.975, df) * (std/np.sqrt(n))
 
 print("95% 신뢰구간은",a,"부터",b,"이다")
-
 
 ```
