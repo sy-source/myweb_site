@@ -8,7 +8,7 @@
 
 <meta name="author" content="yoon">
 
-<title>myweb_site1 - hw5</title>
+<title>woong.2 - hw5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,7 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -114,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">myweb_site1</span>
+    <span class="navbar-title">woong.2</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -132,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
+    <a class="nav-link" href="../../posts/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -188,6 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<p><img src="다운로드.jfif" class="img-fluid"></p>
 <section id="균일분포-37에서-20개의-표본을-뽑아서-분산은-2가지-방법으로-추정---x-uab" class="level3">
 <h3 class="anchored" data-anchor-id="균일분포-37에서-20개의-표본을-뽑아서-분산은-2가지-방법으로-추정---x-uab">균일분포 (3,7)에서 20개의 표본을 뽑아서 분산은 2가지 방법으로 추정 -&gt; X ~ U(a,b)</h3>
 </section>
@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="s_2" class="level2">
 <h2 class="anchored" data-anchor-id="s_2">s_2</h2>
-<div id="73aa6627" class="cell" data-execution_count="1">
+<div id="5bb45262" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> uniform</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-2-output-1.png" width="583" height="414" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-2-output-1.png" width="583" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -224,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="k_2" class="level2">
 <h2 class="anchored" data-anchor-id="k_2">k_2</h2>
-<div id="2771f8e2" class="cell" data-execution_count="2">
+<div id="71aaf6e5" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">20</span><span class="op">*</span><span class="dv">10000</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span> x.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지" class="level2">
 <h2 class="anchored" data-anchor-id="결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지">결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지</h2>
-<div id="99ae6f8c" class="cell" data-execution_count="3">
+<div id="2fc4a631" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># n−1로 나눈 s_2의 그래프를 보면, 녹색축인 모분산을 중심으로 왼쪽, 오른쪽 모두 고르게 분포가 되어있음.</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># n으로 나눈 k_2의 그래프를 보면, 녹색축인 모분산을 중심으로 왼쪽으로 치우쳐져 있음.(편향됨)</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 결론적으로, n-1로 나눈 s_2 그래프가 모분산을 더 잘 나타내고 있음!! -&gt; 표본 분산의 불편성 보장 &lt;-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

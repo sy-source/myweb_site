@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>myweb_site1 - hw6</title>
+<title>woong.2 - hw6</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,7 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -113,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">myweb_site1</span>
+    <span class="navbar-title">woong.2</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -131,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
+    <a class="nav-link" href="../../posts/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -182,6 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<p><img src="다운로드 (1).jfif" class="img-fluid"></p>
 <section id="챕터-9-2-설문조사-그래프에서-각-성별-95-신뢰구간-계산후-그리기" class="level2">
 <h2 class="anchored" data-anchor-id="챕터-9-2-설문조사-그래프에서-각-성별-95-신뢰구간-계산후-그리기">챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기</h2>
 </section>
@@ -189,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="norm.ppf-사용해서-그릴-것.-모분산은-표본-분산을-사용해서-추정">norm.ppf() 사용해서 그릴 것. 모분산은 표본 분산을 사용해서 추정</h2>
 <section id="챕터-9-2-설문조사-그래프-불러오기" class="level3">
 <h3 class="anchored" data-anchor-id="챕터-9-2-설문조사-그래프-불러오기">챕터 9-2 설문조사 그래프 불러오기</h3>
-<div id="47cd06fb" class="cell" data-execution_count="1">
+<div id="3d0c2445" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install pyreadstat</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -235,7 +235,7 @@ Requirement already satisfied: six&gt;=1.5 in c:\users\user\appdata\roaming\pyth
 </section>
 <section id="각-성별-95-신뢰구간-계산후-그리기" class="level2">
 <h2 class="anchored" data-anchor-id="각-성별-95-신뢰구간-계산후-그리기">각 성별 95% 신뢰구간 계산후 그리기</h2>
-<div id="76a64e63" class="cell" data-execution_count="2">
+<div id="0ff913d1" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sex_income <span class="op">=</span> welfare.dropna(subset<span class="op">=</span><span class="st">"income"</span>)<span class="op">\</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        .groupby(<span class="st">"sex"</span>, as_index <span class="op">=</span> <span class="va">False</span>)<span class="op">\</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        .agg(mean_income <span class="op">=</span> (<span class="st">"income"</span>,<span class="st">"mean"</span>),</span>
