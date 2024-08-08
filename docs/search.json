@@ -354,7 +354,7 @@
     "href": "blog.html",
     "title": "숙제",
     "section": "",
-    "text": "hw2\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhw7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n윤대웅\n\n\n\n\n\n\nNo matching items"
+    "text": "hw2\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\n\n\n\n\n\n\n\n\nyoon\n\n\n\n\n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhw7\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRecent posts\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n윤대웅\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "graph.html",
@@ -642,5 +642,12 @@
     "title": "hw7",
     "section": "3. 검정통계량 계산",
     "text": "3. 검정통계량 계산\n\ncar = np.array([15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927, 15.382, 16.709, 16.804])\n\nmu = 16.0\nn = len(car) # 15개\nx_bar = np.mean(car)\nstd = np.std(car, ddof=1) #표준편차 (ddof=1 -&gt; n-1)\n\nt_s = (x_bar - mu) / (std / np.sqrt(n))\nt_s\n\nnp.float64(-1.8500447456376756)"
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Recent posts",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nhw2\n\n\n\n\n\n\n\n\n\n\n\nhw3\n\n\n\n\n\n\n\n\n\n\n\nhw4\n\n\n\n\n\n\n\n\n\n\n\nhw5\n\n\n\n\n\n\n\n\n\n\n\nhw6\n\n\n\n\n\n\n\n\n\n\n\nhw7\n\n\n\n\n\n\n\n\n\n\n\nhw1\n\n\n\nJul 12, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]

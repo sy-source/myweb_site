@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>myweb_site1 - hw7</title>
+<title>woong.2 - hw7</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">myweb_site1</span>
+    <span class="navbar-title">woong.2</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -131,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
+    <a class="nav-link" href="../../posts/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -191,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="h1-mu-16.0" class="level3">
 <h3 class="anchored" data-anchor-id="h1-mu-16.0">H1 : mu &lt; 16.0</h3>
-<div id="68394441" class="cell" data-execution_count="1">
+<div id="97b057ed" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="검정통계량-계산" class="level2">
 <h2 class="anchored" data-anchor-id="검정통계량-계산">3. 검정통계량 계산</h2>
-<div id="7783a61c" class="cell" data-execution_count="2">
+<div id="b368e847" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>car <span class="op">=</span> np.array([<span class="fl">15.078</span>, <span class="fl">15.752</span>, <span class="fl">15.549</span>, <span class="fl">15.56</span>, <span class="fl">16.098</span>, <span class="fl">13.277</span>, <span class="fl">15.462</span>, <span class="fl">16.116</span>, <span class="fl">15.214</span>, <span class="fl">16.93</span>, <span class="fl">14.118</span>, <span class="fl">14.927</span>, <span class="fl">15.382</span>, <span class="fl">16.709</span>, <span class="fl">16.804</span>])</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>mu <span class="op">=</span> <span class="fl">16.0</span></span>
@@ -212,14 +212,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>t_s <span class="op">=</span> (x_bar <span class="op">-</span> mu) <span class="op">/</span> (std <span class="op">/</span> np.sqrt(n))</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>t_s</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>np.float64(-1.8500447456376756)</code></pre>
 </div>
 </div>
 </section>
 <section id="p-value-계산" class="level1">
 <h1>4. p-value 계산</h1>
-<div id="8d81185e" class="cell" data-execution_count="3">
+<div id="54063ca9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
@@ -234,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="신뢰-구간" class="level1">
 <h1>6. 95 % 신뢰 구간</h1>
-<div id="d5de029e" class="cell" data-execution_count="4">
+<div id="e59027f5" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> n<span class="op">-</span><span class="dv">1</span></span>
