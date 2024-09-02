@@ -4,6 +4,9 @@ format: html
 editor: visual
 jupyter: python3
 ---
+
+![](다운로드.jfif)
+
 # Q1. ADP 실기 시험의 통계파트 표준점수의 밀도함수를 그려보세요.
 
 ```{python}
