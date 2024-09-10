@@ -1,0 +1,150 @@
+---
+title: "hw9"
+format: html
+editor: visual
+jupyter: python3
+---
+
+## 문제 1. 데이터를 로드하고, 로지스틱 회귀모델을 적합하고, 회귀 표를 작성하세요.
+
+```{python}
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+from sklearn.metrics import confusion_matrix, accuracy_score, f1_score
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import norm
+
+import pandas as pd
+import statsmodels.formula.api as smf  
+from scipy.stats import norm
+
+# 데이터 로드
+data = pd.read_table('C:/Users/USER/Documents/LS빅데이터스쿨/lsbigdata-project1/data/leukemia_remission.txt', delimiter='\t')
+
+# 로지스틱 회귀 모델 적합
+model = smf.logit("REMISS ~ CELL + SMEAR + INFIL + LI + BLAST + TEMP", data=data).fit()
+
+# 모델 요약 출력
+print(model.summary())
+
+
+```
+
+## 문제 2. 해당 모델은 통계적으로 유의한가요? 그 이유를 검정통계량를 사용해서 설명하시오.
+
+```{python}
+
+stat_value = 2 * ((-17.186)-(-10.797))
+stat_value
+
+```
+
+
+## 문제 3. 유의수준이 0.2를 기준으로 통계적으로 유의한 변수는 몇개이며, 어느 변수 인가요?
+
+```{python}
+
+# LI(0.10) , TEMP(0.19)
+
+```
+
+## 문제 4. 다음 환자에 대한 오즈는 얼마인가요?
+
+### CELL (골수의 세포성): 65%
+### SMEAR (골수편의 백혈구 비율): 45%
+### INFIL (골수의 백혈병 세포 침투 비율): 55%
+### LI (골수 백혈병 세포의 라벨링 인덱스): 1.2
+### BLAST (말초혈액의 백혈병 세포 수): 1.1세포/μL
+### TEMP (치료 시작 전 최고 체온): 0.9
+
+```{python}
+
+my_odds=np.exp(64.2581 + 30.8301 * 0.65 + 24.6863 * 0.45 + (-24.9745) * 0.55 + 4.3605 * 1.2 + (-0.0115) * 1.1 + (-100.1734) * 0.9)
+my_odds
+
+```
+
+## 문제 5. 위 환자의 혈액에서 백혈병 세포가 관측되지 않은 확률은 얼마인가요?
+
+```{python}
+
+my_odds / (my_odds+1)
+
+```
+
+## 문제 6. TEMP 변수의 계수는 얼마이며, 해당 계수를 사용해서 TEMP 변수가 백혈병 치료에 대한 영향을 설명하시오.
+
+```{python}
+
+np.exp(-100.1734)
+
+```
+
+## 문제 7. CELL 변수의 99% 오즈비에 대한 신뢰구간을 구하시오.
+
+```{python}
+
+z = norm.ppf(0.995)
+coef = 30.8301  
+std_err = 52.135  
+
+conf_int_low = np.exp(coef - z * std_err)  
+conf_int_high = np.exp(coef + z * std_err)
+print(conf_int_low, conf_int_high)
+
+```
+
+
+## 문제 8. 주어진 데이터에 대하여 로지스틱 회귀 모델의 예측 확률을 구한 후, 50% 이상인 경우 1로 처리하여, 혼동 행렬를 구하시오.
+
+```{python}
+
+df['predicted'] = model.predict() >= 0.5
+from sklearn.metrics import confusion_matrix
+conf_matrix = confusion_matrix(df['REMISS'], df['predicted'])
+print(conf_matrix)
+
+actual = df['REMISS'] 
+predicted = model.predict() >= 0.5 
+
+TP = TN = FP = FN = 0
+
+for a, p in zip(actual, predicted):
+    if a == 1 and p == 1:
+        TP += 1
+    elif a == 0 and p == 0:
+        TN += 1
+    elif a == 0 and p == 1:
+        FP += 1
+    elif a == 1 and p == 0:
+        FN += 1
+
+conf_matrix = np.array([[TN, FP], [FN, TP]]).reshape(2,2)
+print("Confusion Matrix:")
+print(conf_matrix)
+
+```
+
+
+## 문제 9. 해당 모델의 Accuracy는 얼마인가요?
+
+```{python}
+
+accuracy1 = accuracy_score(df['REMISS'], df['predicted'])
+accuracy2 = (conf_matrix[0, 0] + conf_matrix[1, 1]) / conf_matrix.sum()
+accuracy1
+accuracy2
+
+```
+
+## 문제 10. 해당 모델의 F1 Score를 구하세요.
+
+```{python}
+
+f1 = f1_score(df['REMISS'], df['predicted'])
+f1
+
+```
+
